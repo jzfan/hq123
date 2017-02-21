@@ -69,24 +69,24 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/dashbord') }}">控制台</a>
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
+                        <a href="{{ url('/login') }}">登录</a>
                     @endif
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    My Web
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="#">A</a>
+                    <a href="#">B</a>
+                    <a href="#">C</a>
+                    <a href="#">D</a>
+                    <a href="#">E</a>
                 </div>
             </div>
         </div>
