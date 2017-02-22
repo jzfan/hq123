@@ -5,7 +5,7 @@
     <div class="row">
     <div class="alert alert-success" id='success-div' role="alert" style="display: none">操作成功！</div>
 <div class="col-md-12">
-    <table class='table table-responsive table-hover'>
+    <table class='table table-responsive table-hover table-striped'>
         <thead>
             <tr>
                 <th>#</th>
@@ -24,7 +24,7 @@
                 <th>{{ $user->id }}</th>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->phone }}</td>
-                <td><span class="glyphicon glyphicon-yuan" aria-hidden="true"></span>{{ $loan->amount }}</td>
+                <td><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ $loan->amount }}</td>
                 <td>{{ $loan->type }}</td>
                 <td><img src='{{ $user->file->path }}' width="60"></td>
                 <td>

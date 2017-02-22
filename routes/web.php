@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::group(['namespace'=>'Backend'], function () {
+Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'admin']], function () {
 	Route::get('/dashbord', 'DashbordController@index');
 	Route::get('/users', 'UserController@index');
 	Route::get('/users/pending', 'UserController@pending');

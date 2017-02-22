@@ -58,14 +58,14 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/users/pending"> 待审</a></li>
-                                    <li><a href="/users/passed"> 通过</a></li>
-                                    <li><a href="/users"> 一览</a></li>
+                                    <li><a href="/users/pending"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"> </span>  待审</a></li>
+                                    <li><a href="/users/passed"> <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"> </span> 通过</a></li>
+                                    <li><a href="/users"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> </span>  一览</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"> </span> {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -73,6 +73,7 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
+                                            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 
                                             退出
                                         </a>
 
