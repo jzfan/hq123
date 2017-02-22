@@ -1,6 +1,8 @@
 <?php
 
+use Wx\File\File;
 use Wx\User\User;
+use Wx\Loan\Loan;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,7 +16,12 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         User::truncate();
-        factory(User::class, 22)->create();
+        File::truncate();
+        Loan::truncate();
+        factory(User::class, 22)->create()->each( function ($u) {
+            $u->file()->save( factory(File::class)->make() );
+            $u->loans()->save( factory(Loan::class)->make(['name' => $u->name]) );
+        });
         User::first()->update(['phone'=>'13333333333']);
     }
 }

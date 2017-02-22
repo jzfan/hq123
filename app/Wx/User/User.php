@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'status', 'phone'
     ];
 
     /**
@@ -26,4 +26,26 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function file()
+    {
+        return $this->hasOne(\Wx\File\File::class);
+    }
+
+    public function loans()
+    {
+        return $this->hasMany(\Wx\Loan\Loan::class);
+    }
+
+    public function getStatusAttribute($value)
+    {
+        switch ($value) {
+            case 0:
+                return '审核中';
+            case 1:
+                return '通过';
+            default:
+                return '未通过';
+        }
+    }   
 }

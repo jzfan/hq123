@@ -24,3 +24,22 @@ $factory->define(Wx\User\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(Wx\File\File::class, function (Faker\Generator $faker) {
+   $path = $faker->image(public_path() . '/images/fake', $width = 110, $height = 110);
+   $arr = explode('/', $path);
+   $filename = array_pop($arr);
+    return [
+        'path' => '/images/fake/' . $filename
+
+    ];
+});
+
+$factory->define(Wx\Loan\Loan::class, function (Faker\Generator $faker) {
+    return [
+        'id_num' => $faker->creditCardNumber,
+        'address' => $faker->address,
+        'amount' => $faker->randomNumber/100
+
+    ];
+});

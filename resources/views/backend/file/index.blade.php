@@ -5,7 +5,13 @@
     <div class="row">
 
 <div class="col-md-12">
-    <table class='table table-stripe'></table>
+    <table class='table table-responsive table-hover'>
+    	<thead>
+    		<tr>
+    			
+    		</tr>
+    	</thead>
+    </table>
 </div>
 
     </div>

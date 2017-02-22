@@ -17,8 +17,8 @@ class CreateFilesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('path');
-            $table->string('type');
-            $table->tinyInteger('status');
+            $table->enum('type', ['default'])->default('default');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }
