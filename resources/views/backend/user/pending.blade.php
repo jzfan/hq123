@@ -1,11 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <div class="row">
-<div class="alert alert-success" id='success-div' role="alert" style="display: none">操作成功！</div>
-<div class="col-md-12">
-    <table class='table table-responsive table-hover table-striped'>
+<div class="box box-warning">
+    <div class="box-header">
+      <h3 class="box-title">Hover Data Table</h3>
+    </div>
+@include('layouts.success')
+    <div class="box-body">
+            
+        <table class="table table-bordered table-hover dataTable">
         <thead>
             <tr>
                 <th>#</th>
@@ -28,18 +31,19 @@
                 <td>{{ $loan->type }}</td>
                 <td><img src='{{ $user->file->path }}' width="60"></td>
                 <td>
-                    <button class='btn-success' onclick='pass({{ $user->id }}, this)'>&radic;</button>
+                    <button class='btn-success' onclick='pass({{ $user->id }}, this)'><span class="fa fa-check" aria-hidden="true"></span> </button>
                 </td>
             </tr>
             @endforeach
         @endforeach
         </tbody>
     </table>
-    {!! $users->links() !!}
-</div>
-
+        <div class="pull-right">
+            {!! $users->links() !!}        
+        </div>
     </div>
 </div>
+
 @endsection
 
 @section('js')
