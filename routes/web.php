@@ -21,12 +21,23 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'admin']], function () {
 	Route::get('/dashboard', 'DashboardController@index');
-	Route::get('/users', 'UserController@index');
-	Route::get('/users/pending', 'UserController@pending');
-	Route::get('/users/passed', 'UserController@passed');
-	Route::post('/users/{user_id}/pass', 'UserController@pass');
-	Route::post('/users/{user_id}/reject', 'UserController@reject');
+	Route::get('/applies', 'ApplyController@index');
+	Route::get('/applies/pending', 'ApplyController@pending');
+	Route::get('/applies/passed', 'ApplyController@passed');
+	Route::post('/applies/{id}/pass', 'ApplyController@pass');
+	Route::post('/applies/{id}/reject', 'ApplyController@reject');
 });
+
 Route::group(['namespace'=>'Frontend'], function () {
 	Route::get('file', 'FileController@index');
+});
+
+Route::group(['namespace'=>'Wechat', 'prefix'=>'wechat'], function () {
+	Route::get('/register', 'AuthController@registerForm');
+	Route::get('/', 'PageController@index');
+
+	Route::group(['middleware'=>'auth'], function () {
+		Route::get('/apply', 'ApplyController@showForm');
+		Route::post('/apply', 'ApplyController@submit');
+	});
 });

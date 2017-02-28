@@ -32,20 +32,15 @@ class User extends Authenticatable
         return $this->hasOne(\Wx\File\File::class);
     }
 
-    public function loans()
+    public function apply()
     {
-        return $this->hasMany(\Wx\Loan\Loan::class);
+        return $this->hasOne(\Wx\Loan\Apply::class);
     }
 
-    public function getStatusAttribute($value)
+    public function ScopeByApplyStatus($q, $status)
     {
-        switch ($value) {
-            case 0:
-                return '审核中';
-            case 1:
-                return '通过';
-            default:
-                return '未通过';
-        }
-    }   
+        return $this->whereHas('apply', function ($q) use ($status) {
+            $q->where('status', $status);
+        });
+    }  
 }

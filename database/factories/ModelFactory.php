@@ -19,7 +19,6 @@ $factory->define(Wx\User\User::class, function (Faker\Generator $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'phone' => (string) mt_rand(13000000000, 18999999999),
-        'status' => mt_rand(0, 2),
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
     ];
@@ -35,11 +34,27 @@ $factory->define(Wx\File\File::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(Wx\Loan\Loan::class, function (Faker\Generator $faker) {
+$factory->define(Wx\Loan\Apply::class, function (Faker\Generator $faker) {
     return [
+        'profession' => (string)mt_rand(1, 3),
         'id_num' => $faker->creditCardNumber,
         'address' => $faker->address,
-        'amount' => $faker->randomNumber/100
+        'amount' => $faker->randomNumber,
+        'worked_since' => $faker->date(),
+        'paid_by' => $faker->word,
+        'yanglaobaoxian' => $faker->word,
+        'gongjijin' => $faker->word,
+        'qitabaoxian' => $faker->word,
+        'fangchan' => $faker->word,
+        'shenyileixin' => $faker->word,
+        'jinyinshijian' => $faker->word,
+        'nianyinyee' => $faker->word,
+        'gerenzhangu' => $faker->word,
+        'address' => $faker->address,
+        'salary' => $faker->numberBetween('2000', '50000'),
+        'turnover' => $faker->numberBetween('20000', '5000000'),
+        'amount' => $faker->numberBetween('2000', '500000'),
+        'status' => (string)mt_rand(1, 3),
 
     ];
 });

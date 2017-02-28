@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>My Web</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -13,8 +13,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #00b1b3;
+                color: #222;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -50,7 +50,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #222;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -77,9 +77,9 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <h3 class="title m-b-md">
                     My Web
-                </div>
+                </h3>
 
                 <div class="links">
                     <a href="#">A</a>

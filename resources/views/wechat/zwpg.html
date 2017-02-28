@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>自我评估</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/app.css" rel="stylesheet" />
+		<style>
+			
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-pull-left">返回</a>
+			<h1 class="mui-title">自我评估</h1>
+			<a class="mui-pull-right">退出</a>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded" style="margin: 5px;">
+				<div class="mui-msg">
+					为保证贷款成功,请准确填写以下信息
+				</div>
+
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>职业身份</label>
+						<input type="text" placeholder="请选择" id="info">
+					</div>
+					
+					<div class="work no">
+						<div class="mui-input-row">
+							<label>入职时间</label>
+							<input type="date" placeholder="请选择">
+						</div>
+						<div class="mui-input-row">
+							<label>发薪方式</label>
+							<input type="text" placeholder="请选择" id="salary">
+						</div>
+						<div class="mui-input-row">
+							<label>养老保险</label>
+							<input type="text" placeholder="请选择" id="work-safe">
+						</div>
+						<div class="mui-input-row">
+							<label>公积金</label>
+							<input type="text" placeholder="请选择" id="work-home">
+						</div>
+						<div class="mui-input-row">
+							<label>其他保险</label>
+							<input type="text" placeholder="请选择" id="work-safe-else">
+						</div>
+						<div class="mui-input-row">
+							<label>房产情况</label>
+							<input type="text" placeholder="请选择" id="work-fc">
+						</div>
+					</div>
+
+
+					<div class="boss no">
+						<div class="mui-input-row">
+							<label>生意类型</label>
+							<input type="text" placeholder="请选择" id="boss-class">
+						</div>
+						<div class="mui-input-row">
+							<label>经营时间</label>
+							<input type="date" placeholder="请选择">
+						</div>
+						<div class="mui-input-row">
+							<label>年营业额</label>
+							<input type="text" placeholder="请输入(单位:万元)">
+						</div>
+						<div class="mui-input-row">
+							<label>个人占股</label>
+							<input type="text" placeholder="请选择" id="boss-zg">
+						</div>
+						<div class="mui-input-row">
+							<label>房产情况</label>
+							<input type="text" placeholder="请选择" id="boss-fc">
+						</div>
+					</div>
+
+					<div class="bw no">
+						<div class="mui-msg">
+							生意信息
+						</div>
+
+						<div class="mui-input-row">
+							<label>生意类型</label>
+							<input type="text" placeholder="请选择" id="bw-class">
+						</div>
+						<div class="mui-input-row">
+							<label>经营时间</label>
+							<input type="date" placeholder="请选择">
+						</div>
+						<div class="mui-input-row">
+							<label>年营业额</label>
+							<input type="text" placeholder="请输入(单位:万元)">
+						</div>
+						<div class="mui-input-row">
+							<label>个人占股</label>
+							<input type="text" placeholder="请选择" id="bw-zg">
+						</div>
+						<div class="mui-input-row">
+							<label>房产情况</label>
+							<input type="text" placeholder="请选择" id="bw-fc">
+						</div>
+
+						<div class="mui-msg">
+							个人信息
+						</div>
+
+						<div class="mui-input-row">
+							<label>入职时间</label>
+							<input type="date" placeholder="请选择">
+						</div>
+						<div class="mui-input-row">
+							<label>发薪方式</label>
+							<input type="text" placeholder="请选择" id="bw-salary">
+						</div>
+						<div class="mui-input-row">
+							<label>养老保险</label>
+							<input type="text" placeholder="请选择" id="bw-safe">
+						</div>
+						<div class="mui-input-row">
+							<label>公积金</label>
+							<input type="text" placeholder="请选择" id="bw-home">
+						</div>
+						<div class="mui-input-row">
+							<label>其他保险</label>
+							<input type="text" placeholder="请选择" id="bw-safe-else">
+						</div>
+					</div>
+				</form>
+
+
+				<div class="mui-content-padded">
+					<a href="register.html">
+					<button id="login" type="submit" class="mui-btn mui-btn-block mui-btn-danger">开始申请</button></a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="mui-backdrop mask1" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">职业身份</div>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" data-id="1">
+						上班族
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" data-id="2">
+						生意人士
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-selected" data-id="3">
+					<a class="mui-navigate-right">
+						即上班也工作
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- 发薪方式 -->
+		<div class="mui-backdrop mask2" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">	发新方式</div>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						现金发放
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						银行代发
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-selected">
+					<a class="mui-navigate-right">
+						部分代发,部分现金
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- work-养老保险 -->
+		<div class="mui-backdrop mask3" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">养老保险</div>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">单位购买6个月以上</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">单位购买6个月以下</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">自己购买</a></li>
+				<li class="mui-table-view-cell mui-selected"><a class="mui-navigate-right">没有购买</a></li>
+			</ul>
+		</div>
+		
+		<!-- work-公积金 -->
+		<div class="mui-backdrop mask4" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">公积金</div>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">单位购买6个月以上</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">单位购买6个月以下</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">自己购买</a></li>
+				<li class="mui-table-view-cell mui-selected"><a class="mui-navigate-right">没有购买</a></li>
+			</ul>
+		</div>
+
+		<!-- work-其他保险 -->
+		<div class="mui-backdrop mask5" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">其他保险</div>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">有购买医疗保险</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">有购买工伤保险</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">以上两者都有</a></li>
+				<li class="mui-table-view-cell mui-selected"><a class="mui-navigate-right">以上两者都无</a></li>
+			</ul>
+		</div>
+
+		<!-- work-房产情况 -->
+		<div class="mui-backdrop mask6" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">房产情况</div>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">按揭商品房</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">非按揭商品房</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">自建房</a></li>
+				<li class="mui-table-view-cell mui-selected"><a class="mui-navigate-right">无房</a></li>
+			</ul>
+		</div>
+
+		<!-- boss-生意类型 -->
+		<div class="mui-backdrop mask7" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">生意类型</div>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">网店卖家</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">实体经营</a></li>
+			</ul>
+		</div>
+
+		<!-- boss-个人占股 -->
+		<div class="mui-backdrop mask8" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">个人占股</div>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">1-50%</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">50%-100%</a></li>
+			</ul>
+		</div>
+
+		<!-- boss-房产情况 -->
+		<div class="mui-backdrop mask9" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">房产情况</div>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">按揭商品房</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">非按揭商品房</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">自建房</a></li>
+				<li class="mui-table-view-cell mui-selected"><a class="mui-navigate-right">无房</a></li>
+			</ul>
+		</div>
+
+		<!-- bw-生意类型 -->
+		<div class="mui-backdrop mask10" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">生意类型</div>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">网店卖家</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">实体经营</a></li>
+			</ul>
+		</div>
+
+		<!-- bw-个人占股 -->
+		<div class="mui-backdrop mask11" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">个人占股</div>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">1-50%</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">50-100%</a></li>
+			</ul>
+		</div>
+
+		<!-- bw-房产情况 -->
+		<div class="mui-backdrop mask12" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">房产情况</div>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">按揭商品房</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">非按揭商品房</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">自建房</a></li>
+				<li class="mui-table-view-cell mui-selected"><a class="mui-navigate-right">无房</a></li>
+			</ul>
+		</div>
+
+		<!-- bw-薪资发放 -->
+		<div class="mui-backdrop mask13" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">	发新方式</div>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						现金发放
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						银行代发
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-selected">
+					<a class="mui-navigate-right">
+						部分代发,部分现金
+					</a>
+				</li>
+			</ul>
+		</div>
+
+
+		<!-- bw-养老保险 -->
+		<div class="mui-backdrop mask14" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">养老保险</div>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">单位购买6个月以上</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">单位购买6个月以下</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">自己购买</a></li>
+				<li class="mui-table-view-cell mui-selected"><a class="mui-navigate-right">没有购买</a></li>
+			</ul>
+		</div>
+		
+		<!-- bw-公积金 -->
+		<div class="mui-backdrop mask15" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">公积金</div>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">单位购买6个月以上</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">单位购买6个月以下</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">自己购买</a></li>
+				<li class="mui-table-view-cell mui-selected"><a class="mui-navigate-right">没有购买</a></li>
+			</ul>
+		</div>
+
+		<!-- bw-其他保险 -->
+		<div class="mui-backdrop mask16" style="display:none">
+			<ul class="mui-table-view mui-table-view-radio list-radio">
+				<div class="com-title">其他保险</div>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">有购买医疗保险</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">有购买工伤保险</a></li>
+				<li class="mui-table-view-cell"><a class="mui-navigate-right">以上两者都有</a></li>
+				<li class="mui-table-view-cell mui-selected"><a class="mui-navigate-right">以上两者都无</a></li>
+			</ul>
+		</div>
+
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/mui.enterfocus.js"></script>
+		<script src="js/app.js"></script>
+		<script>
+
+		function remove(){
+			$('.work').removeClass('no active');
+		    $('.bw').removeClass('no active');
+		    $('.boss').removeClass('no active');
+		}
+
+		var info = document.getElementById("info");
+		document.querySelector('.mui-table-view.mui-table-view-radio').addEventListener('selected',function(e){
+			info.value = e.detail.el.innerText;
+		});
+
+		$("#info").click(function() {
+			$('.mask1').fadeIn('fast');
+		})
+		$('.mask1 li').click(function(){
+			$('.mask1').fadeOut('fast');
+			var n = parseInt($(this).find('a').attr('data-id'));
+			switch(n)
+				{
+				case 1:
+				  remove();
+				  $('.bw').addClass('no');
+				  $('.boss').addClass('no');
+				  $('.work').addClass('active');
+				  break;
+				case 2:
+				  remove();
+				  $('.bw').addClass('no');
+				  $('.work').addClass('no');
+				  $('.boss').addClass('active');
+				  break;
+				default:
+				  remove();
+				  $('.work').addClass('no');
+				  $('.boss').addClass('no');
+				  $('.bw').addClass('active');
+				}
+		});
+
+
+		/*薪资发放选择*/
+		function ltrim(s){
+    		return s.replace(/(^\s*)/g, "");
+		};//去左边空格
+		$("#salary").click(function() {
+			$('.mask2').fadeIn('fast');
+		})
+		$('.mask2 li').click(function(){
+			$('.mask2').fadeOut('fast');
+			$('#salary').val(ltrim($(this).find('a').text()));
+		});
+
+		/*work-养老保险选择*/
+		$("#work-safe").click(function() {
+			$('.mask3').fadeIn('fast');
+		})
+		$('.mask3 li').click(function(){
+			$('.mask3').fadeOut('fast');
+			$('#work-safe').val(ltrim($(this).find('a').text()));
+		});
+		/*work-住房公积金选择*/
+		$("#work-home").click(function() {
+			$('.mask4').fadeIn('fast');
+		})
+		$('.mask4 li').click(function(){
+			$('.mask4').fadeOut('fast');
+			$('#work-home').val(ltrim($(this).find('a').text()));
+		});
+		
+		/*work-其他保险*/
+		$("#work-safe-else").click(function() {
+			$('.mask5').fadeIn('fast');
+		})
+		$('.mask5 li').click(function(){
+			$('.mask5').fadeOut('fast');
+			$('#work-safe-else').val(ltrim($(this).find('a').text()));
+		});
+		/*work-房产情况*/
+		$("#work-fc").click(function() {
+			$('.mask6').fadeIn('fast');
+		})
+		$('.mask6 li').click(function(){
+			$('.mask6').fadeOut('fast');
+			$('#work-fc').val(ltrim($(this).find('a').text()));
+		});
+
+
+		/*boss-生意类型*/
+		$("#boss-class").click(function() {
+			$('.mask7').fadeIn('fast');
+		})
+		$('.mask7 li').click(function(){
+			$('.mask7').fadeOut('fast');
+			$('#boss-class').val(ltrim($(this).find('a').text()));
+		});
+		
+		/*boss-个人占股*/
+		$("#boss-zg").click(function() {
+			$('.mask8').fadeIn('fast');
+		})
+		$('.mask8 li').click(function(){
+			$('.mask8').fadeOut('fast');
+			$('#boss-zg').val(ltrim($(this).find('a').text()));
+		});
+		/*boss-房产情况*/
+		$("#boss-fc").click(function() {
+			$('.mask9').fadeIn('fast');
+		})
+		$('.mask9 li').click(function(){
+			$('.mask9').fadeOut('fast');
+			$('#boss-fc').val(ltrim($(this).find('a').text()));
+		});
+
+		/*bw-生意类型*/
+		$("#bw-class").click(function() {
+			$('.mask10').fadeIn('fast');
+		})
+		$('.mask10 li').click(function(){
+			$('.mask10').fadeOut('fast');
+			$('#bw-class').val(ltrim($(this).find('a').text()));
+		});
+
+		/*bw-个人占股*/
+		$("#bw-zg").click(function() {
+			$('.mask11').fadeIn('fast');
+		})
+		$('.mask11 li').click(function(){
+			$('.mask11').fadeOut('fast');
+			$('#bw-zg').val(ltrim($(this).find('a').text()));
+		});
+		/*bw-房产情况*/
+		$("#bw-fc").click(function() {
+			$('.mask12').fadeIn('fast');
+		})
+		$('.mask12 li').click(function(){
+			$('.mask12').fadeOut('fast');
+			$('#bw-fc').val(ltrim($(this).find('a').text()));
+		});
+
+
+		/*bw-薪资发放*/
+		$("#bw-salary").click(function() {
+			$('.mask13').fadeIn('fast');
+		})
+		$('.mask13 li').click(function(){
+			$('.mask13').fadeOut('fast');
+			$('#bw-salary').val(ltrim($(this).find('a').text()));
+		});
+
+		/*bw-养老保险选择*/
+		$("#bw-safe").click(function() {
+			$('.mask14').fadeIn('fast');
+		})
+		$('.mask14 li').click(function(){
+			$('.mask14').fadeOut('fast');
+			$('#bw-safe').val(ltrim($(this).find('a').text()));
+		});
+		/*bw-住房公积金选择*/
+		$("#bw-home").click(function() {
+			$('.mask15').fadeIn('fast');
+		})
+		$('.mask15 li').click(function(){
+			$('.mask15').fadeOut('fast');
+			$('#bw-home').val(ltrim($(this).find('a').text()));
+		});
+		
+		/*bw-其他保险*/
+		$("#bw-safe-else").click(function() {
+			$('.mask16').fadeIn('fast');
+		})
+		$('.mask16 li').click(function(){
+			$('.mask16').fadeOut('fast');
+			$('#bw-safe-else').val(ltrim($(this).find('a').text()));
+		});
+
+		</script>
+	</body>
+
+</html>

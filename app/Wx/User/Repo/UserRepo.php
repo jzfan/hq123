@@ -16,7 +16,7 @@ class UserRepo
 
 	public function byPage()
 	{
-		return $this->user->with('file', 'loans')->paginate(10);
+		return $this->user->with('file', 'apply')->paginate(10);
 	}
 
 	public function new()
@@ -31,12 +31,12 @@ class UserRepo
 
 	public function passed()
 	{
-		return $this->user->where('status', 1)->paginate(10);
+		return $this->user->byApplyStatus('passed')->paginate(10);
 	}
 
 	public function pending()
 	{
-		return $this->user->where('status', 0)->paginate(10);
+		return $this->user->byApplyStatus('pending')->paginate(10);
 	}
 
 	public function pass($id)
@@ -48,4 +48,5 @@ class UserRepo
 	{
 		return $this->user->findOrFail($id)->update(['status'=>0]);
 	}
+
 }

@@ -27,17 +27,46 @@
         <li><a href="/dashboard"><i class="fa fa-dashboard"></i> <span>控制台</span></a></li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-group"></i> <span>用户</span>
+            <i class="fa fa-briefcase"></i> <span>上班族</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/users/pending"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
-            <li><a href="/users/passed"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
-            <li><a href="/users"><i class="fa fa-circle-o text-aqua"></i> 一览</a></li>
+            <li><a href="/applies/pending?pro=worker"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
+            <li><a href="/applies/passed?pro=worker"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
+            <li><a href="/applies?pro=worker"><i class="fa fa-circle-o text-aqua"></i> 一览</a></li>
           </ul>
         </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-coffee"></i> <span>生意人</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/applies/pending?pro=businessman"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
+            <li><a href="/applies/passed?pro=businessman"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
+            <li><a href="/applies?pro=businessman"><i class="fa fa-circle-o text-aqua"></i> 一览</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-random"></i> <span>上班&生意</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/applies/pending?pro=both"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
+            <li><a href="/applies/passed?pro=both"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
+            <li><a href="/applies?pro=both"><i class="fa fa-circle-o text-aqua"></i> 一览</a></li>
+          </ul>
+        </li>
+
         <li><a href="#"><i class="fa fa-star"></i> <span>AAAA</span></a></li>
         <li><a href="#"><i class="fa fa-asterisk"></i> <span>BBBB</span></a></li>
         <li><a href="#"><i class="fa fa-heart"></i> <span>CCCC</span></a></li>

@@ -15,7 +15,7 @@ class CreateFilesTable extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('apply_id')->unsigned();
             $table->string('path');
             $table->enum('type', ['default'])->default('default');
             $table->tinyInteger('status')->default(0);
