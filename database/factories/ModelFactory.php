@@ -48,13 +48,27 @@ $factory->define(Wx\Loan\Apply::class, function (Faker\Generator $faker) {
         'fangchan' => $faker->word,
         'shenyileixin' => $faker->word,
         'jinyinshijian' => $faker->word,
-        'nianyinyee' => $faker->word,
         'gerenzhangu' => $faker->word,
         'address' => $faker->address,
         'salary' => $faker->numberBetween('2000', '50000'),
         'turnover' => $faker->numberBetween('20000', '5000000'),
         'amount' => $faker->numberBetween('2000', '500000'),
         'status' => (string)mt_rand(1, 3),
+
+    ];
+});
+
+$factory->define(Wx\Loan\Car::class, function (Faker\Generator $faker) {
+    return [
+        'real_name' => $faker->name,
+        'phone' => (string) mt_rand(13000000000, 18999999999),
+        'city' => $faker->city,
+        'brand' => $faker->company,
+        'location' => $faker->city,
+        'bought_at' => $faker->dateTime(),
+        'paid_by' => $faker->creditCardType,
+        'duration' => mt_rand(1, 22),
+        'loan' => mt_rand(1, 100) * 10000
 
     ];
 });

@@ -45,11 +45,11 @@ class ApplyRepo
 
 	public function pass($id)
 	{
-		return $this->apply->findOrFail($id)->update(['status'=>1]);
+		return $this->apply->findOrFail($id)->update(['status'=>'passed']);
 	}
 
 	public function reject($id)
 	{
-		return $this->apply->findOrFail($id)->update(['status'=>0]);
+		return $this->apply->findOrFail($id)->update(['status'=>'failed']);
 	}
 }

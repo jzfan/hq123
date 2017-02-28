@@ -57,6 +57,7 @@
                 <td>{{ $apply->status }}</td>
                 <td>
                     <button class='btn-success' onclick='pass({{ $apply->id }}, this)'><span class="fa fa-check" aria-hidden="true"></span> </button>
+                    <button class='btn-danger' onclick='reject({{ $apply->id }}, this)'><span class="fa fa-close" aria-hidden="true"></span> </button>
                 </td>
             </tr>
         @endforeach
@@ -75,7 +76,13 @@
 function pass(id, btn)
 {
     $.post('/applies/'+id+'/pass' ,{}, function(result){
-        $(btn).closest('tr').css('display', 'none');
+        $('.btn-success').closest('tr').css('display', 'none');
+        $('#success-div').show(); 
+
+    });
+
+    $.post('/applies/'+id+'/reject' ,{}, function(result){
+        $('.btn-danger').closest('tr').css('display', 'none');
         $('#success-div').show(); 
 
     });

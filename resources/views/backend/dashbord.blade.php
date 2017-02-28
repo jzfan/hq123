@@ -23,7 +23,7 @@
                              <a href="#" class="list-group-item">{{ $user->id }} {{ $user->name }}</a>
                             @endforeach
                            </div>
-                           <a class="pull-right" href='/users'>>>more</a>
+                           <a class="pull-right" href='/applies?pro=worker'>>>more</a>
                     </div>
                 </div>
             </div>

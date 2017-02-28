@@ -67,6 +67,20 @@
           </ul>
         </li>
 
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-car"></i> <span>汽车</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/cars/pending"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
+            <li><a href="/cars/passed"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
+            <li><a href="/cars"><i class="fa fa-circle-o text-aqua"></i> 一览</a></li>
+          </ul>
+        </li>
+
         <li><a href="#"><i class="fa fa-star"></i> <span>AAAA</span></a></li>
         <li><a href="#"><i class="fa fa-asterisk"></i> <span>BBBB</span></a></li>
         <li><a href="#"><i class="fa fa-heart"></i> <span>CCCC</span></a></li>

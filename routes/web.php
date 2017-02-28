@@ -26,6 +26,10 @@ Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'admin']], functio
 	Route::get('/applies/passed', 'ApplyController@passed');
 	Route::post('/applies/{id}/pass', 'ApplyController@pass');
 	Route::post('/applies/{id}/reject', 'ApplyController@reject');
+
+	Route::get('/cars', 'CarController@index');
+	Route::get('/cars/pending', 'CarController@pending');
+	Route::get('/cars/passed', 'CarController@passed');
 });
 
 Route::group(['namespace'=>'Frontend'], function () {
@@ -35,6 +39,10 @@ Route::group(['namespace'=>'Frontend'], function () {
 Route::group(['namespace'=>'Wechat', 'prefix'=>'wechat'], function () {
 	Route::get('/register', 'AuthController@registerForm');
 	Route::get('/', 'PageController@index');
+	Route::get('/cars', 'PageController@cars');
+	Route::get('/gongjijin', 'PageController@gongjijin');
+	Route::get('/business', 'PageController@business');
+	Route::get('/fangchan', 'PageController@fangchan');
 
 	Route::group(['middleware'=>'auth'], function () {
 		Route::get('/apply', 'ApplyController@showForm');
