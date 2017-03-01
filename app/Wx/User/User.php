@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'status', 'phone'
+        'name', 'email', 'password', 'status', 'phone', 'api_token'
     ];
 
     /**
@@ -42,5 +42,10 @@ class User extends Authenticatable
         return $this->whereHas('apply', function ($q) use ($status) {
             $q->where('status', $status);
         });
+    }
+
+    public function cars()
+    {
+        return $this->hasMany(\Wx\Loan\Car::class);
     }  
 }

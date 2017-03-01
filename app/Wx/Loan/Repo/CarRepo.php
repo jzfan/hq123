@@ -37,4 +37,10 @@ class CarRepo
 	{
 		return $this->car->findOrFail($id)->update(['status'=>'failed']);
 	}
+
+	public function apply($input)
+	{
+		$data = array_merge($input, ['user_id' => \Auth::user()->id]);
+		return $this->car->create($data);
+	}
 }

@@ -1,3 +1,6 @@
+
+@extends('layouts.admin')
+
 @section('content')
 <div class="box box-success">
     <div class="box-header">
@@ -52,9 +55,6 @@
                 <td>{{ $apply->gerenzhangu }}</td>
                 <td><img src='{{ $apply->files->first()->path }}' width="60"></td>
                 <td>{{ $apply->status }}</td>
-                <td>
-                    <button class='btn-danger' onclick='reject({{ $apply->id }}, this)'><span class="fa fa-close" aria-hidden="true"></span> </button>
-                </td>
             </tr>
         @endforeach
         </tbody>
@@ -67,16 +67,3 @@
 
 @endsection
 
-@section('js')
-<script>
-function reject(id, btn)
-{
-    $.post('/applies/'+id+'/reject', {}, function(result){
-        $(btn).closest('tr').css('display', 'none');
-        $('#success-div').show();
-    });
-}
-</script>
-@stop
-
-@extends('layouts.admin')

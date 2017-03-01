@@ -24,12 +24,22 @@ class CarController extends Controller
 	public function pending()
 	{
 		$cars = $this->car->pending(10);
-		return view('backend.car.index', compact('cars'));
+		return view('backend.car.pending', compact('cars'));
 	}
 
     public function passed()
 	{
-		$cars = $this->car->getPage(10);
-		return view('backend.car.index', compact('cars'));
+		$cars = $this->car->passed(10);
+		return view('backend.car.passed', compact('cars'));
+	}
+
+	public function pass($id)
+	{
+		return response()->json(['data'=>$this->car->pass($id)]);
+	}
+
+	public function reject($id)
+	{
+		return response()->json(['data'=>$this->car->reject($id)]);
 	}
 }

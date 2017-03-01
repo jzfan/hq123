@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->enum('status', ['active', 'forbid'])->default('active');
             $table->rememberToken();
+            $table->string('api_token', 60)->unique();
             $table->timestamps();
         });
     }

@@ -30,6 +30,8 @@ Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'admin']], functio
 	Route::get('/cars', 'CarController@index');
 	Route::get('/cars/pending', 'CarController@pending');
 	Route::get('/cars/passed', 'CarController@passed');
+	Route::post('/cars/{id}/pass', 'CarController@pass');
+	Route::post('/cars/{id}/reject', 'CarController@reject');
 });
 
 Route::group(['namespace'=>'Frontend'], function () {

@@ -76,15 +76,17 @@
 function pass(id, btn)
 {
     $.post('/applies/'+id+'/pass' ,{}, function(result){
-        $('.btn-success').closest('tr').css('display', 'none');
+        $(btn).closest('tr').css('display', 'none');
         $('#success-div').show(); 
 
     });
+}
 
-    $.post('/applies/'+id+'/reject' ,{}, function(result){
-        $('.btn-danger').closest('tr').css('display', 'none');
-        $('#success-div').show(); 
-
+function reject(id, btn)
+{
+    $.post('/applies/'+id+'/reject', {}, function(result){
+        $(btn).closest('tr').css('display', 'none');
+        $('#success-div').show();
     });
 }
 </script>

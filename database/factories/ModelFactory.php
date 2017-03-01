@@ -21,6 +21,7 @@ $factory->define(Wx\User\User::class, function (Faker\Generator $faker) {
         'phone' => (string) mt_rand(13000000000, 18999999999),
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+        'api_token' => str_random(60),
     ];
 });
 

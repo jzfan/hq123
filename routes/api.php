@@ -19,4 +19,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['namespace'=>'Api\V1'], function () {
 	Route::post('file', 'FileController@upload');
+
+	Route::post('login', 'AuthController@login');
+	Route::post('register', 'AuthController@register');
+
+
+	Route::group(['middleware'=>'auth:api'], function () {
+		Route::get('status', 'ApplyController@status');
+		Route::post('cars', 'ApplyController@byCar');	
+	});
 });
+
