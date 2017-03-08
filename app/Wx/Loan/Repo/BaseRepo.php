@@ -7,6 +7,8 @@ abstract class BaseRepo
 	protected $model;
 
 	abstract function model();
+	
+	abstract public function save($input);
 
 	public function __construct()
 	{
@@ -49,9 +51,4 @@ abstract class BaseRepo
 		return $this->model->create($data);
 	}
 
-	public function save($input)
-	{
-		$merged = array_merge($input, ['user_id', \Auth::user()->id]);
-	    $this->model->firstOrCreate($merged);
-	}
 }

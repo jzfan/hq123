@@ -276,3 +276,12 @@
 .plist-r .mui-btn{
 	padding: 5px!important;
 }
+.mui-h5, h5{
+	font-size: 18px;
+}
+.marginBg{
+	border-top: 2rem solid #efeff4;
+}
+.marginBg .weui-cells{
+	margin-top: 0px;
+}

@@ -28,7 +28,9 @@ class AuthController extends Controller
     			'password' => bcrypt($request->password),
     			'openid' => $user->id,
                 'city' => 'beijing',
+                'api_token' => str_random(60)
     		]);
 
+        return redirect('/wechat/plist');
     }
 }

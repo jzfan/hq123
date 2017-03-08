@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class LoanBase extends Model
 {
-    protected $guarded = [];
-
     public function user()
     {
     	return $this->belongsTo(\Wx\User\User::class);

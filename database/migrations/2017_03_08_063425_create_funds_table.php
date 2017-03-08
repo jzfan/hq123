@@ -20,7 +20,7 @@ class CreateFundsTable extends Migration
             $table->smallInteger('duration');
             $table->string('company');
             $table->string('location');
-            $table->string('insurence');
+            $table->string('insurance');
             $table->string('fund');
             $table->timestamp('worked_at');
             $table->enum('status', ['pending', 'passed', 'failed'])->default('pending');

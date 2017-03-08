@@ -16,7 +16,7 @@ class WechatController extends Controller
     public function serve()
     {
 
-        $this->freshMenu();
+        // $this->freshMenu();
 
         // $this->reply::dispatch($this->wechat);
         

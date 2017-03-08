@@ -11,4 +11,9 @@ class PageController extends Controller
     {
     	return view('wechat.index');
     }
+
+    public function plist()
+    {
+    	return view('wechat.plist');
+    }
 }
