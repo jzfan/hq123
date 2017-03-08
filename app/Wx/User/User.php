@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'status', 'phone', 'api_token'
+        'name', 'email', 'password', 'status', 'phone', 'api_token', 'city'
     ];
 
     /**
@@ -32,11 +32,6 @@ class User extends Authenticatable
         return $this->hasOne(\Wx\File\File::class);
     }
 
-    public function apply()
-    {
-        return $this->hasOne(\Wx\Loan\Apply::class);
-    }
-
     public function ScopeByApplyStatus($q, $status)
     {
         return $this->whereHas('apply', function ($q) use ($status) {
@@ -47,5 +42,20 @@ class User extends Authenticatable
     public function cars()
     {
         return $this->hasMany(\Wx\Loan\Car::class);
-    }  
+    }
+
+    public function houses()
+    {
+        return $this->hasMany(\Wx\Loan\House::class);
+    }
+
+    public function fund()
+    {
+        return $this->hasOne(\Wx\Loan\Fund::class);
+    }
+
+    public function businesses()
+    {
+        return $this->hasMany(\Wx\Loan\Business::class);
+    }
 }

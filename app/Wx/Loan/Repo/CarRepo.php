@@ -4,43 +4,10 @@ namespace Wx\Loan\Repo;
 
 use Wx\Loan\Car;
 
-class CarRepo
+class CarRepo extends BaseRepo
 {
-	protected $car;
-
-	public function __construct(Car $car)
+	public function model()
 	{
-		$this->car = $car;
-	}
-
-	public function getPage($n)
-	{
-		return $this->car->paginate(10);
-	}
-
-	public function passed($pro)
-	{
-		return $this->car->ofStatus('passed')->paginate(10);
-	}
-
-	public function pending($pro)
-	{
-		return $this->car->ofStatus('pending')->paginate(10);
-	}
-
-	public function pass($id)
-	{
-		return $this->car->findOrFail($id)->update(['status'=>'passed']);
-	}
-
-	public function reject($id)
-	{
-		return $this->car->findOrFail($id)->update(['status'=>'failed']);
-	}
-
-	public function apply($input)
-	{
-		$data = array_merge($input, ['user_id' => \Auth::user()->id]);
-		return $this->car->create($data);
+		return new Car;
 	}
 }

@@ -18,10 +18,8 @@ class CreateCarsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->integer('loan');
             $table->smallInteger('duration');
-            $table->string('real_name');
-            $table->string('phone');
-            $table->string('city');
             $table->string('brand');
+            $table->string('plate_number');
             $table->string('location');
             $table->string('bought_at');
             $table->string('paid_by');

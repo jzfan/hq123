@@ -5,8 +5,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>注册页面</title>
-		<link href="css/mui.min.css" rel="stylesheet" />
-		<link href="css/app.css" rel="stylesheet" />
+		<link href="/wx/css/mui.min.css" rel="stylesheet" />
+		<link href="/wx/css/app.css" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -17,28 +17,29 @@
 				<div class="mui-msg">
 					乾源通用户注册系统
 				</div>
-			<form id='login-form' class="mui-input-group">
+			<form id='login-form' class="mui-input-group" action="/wechat/register" method="POST">
+				{{ csrf_field() }}
 				<div class="mui-input-row">
 					<label>手机</label>
-					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入手机号">
+					<input id='account' type="text" class="mui-input-clear mui-input" name='phone' placeholder="请输入手机号">
 				</div>
 				<div class="mui-input-row">
 					<label>密码</label>
-					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+					<input id='password' type="password" class="mui-input-clear mui-input" name='password' placeholder="请输入密码">
 				</div>
-			</form>
 			<div class="mui-content-padded">
-				<button id='login' class="mui-btn mui-btn-block mui-btn-danger">注册</button>
+				<button id='login' class="mui-btn mui-btn-block mui-btn-danger" type='submit'>注册</button>
 				<div class="link-area"><a id='reg' href="login.html">已有账号？</a> <span class="spliter">|</span> <a id='forgetPassword'>在线客服</a>
 				</div>
 			</div>
+			</form>
 			<div class="mui-content-padded oauth-area">
 
 			</div>
 		</div>
-		<script src="js/mui.min.js"></script>
-		<script src="js/mui.enterfocus.js"></script>
-		<script src="js/app.js"></script>
+		<script src="/wx/js/mui.min.js"></script>
+		<script src="/wx/js/mui.enterfocus.js"></script>
+		<script src="/wx/js/app.js"></script>
 		<script>
 			(function($, doc) {
 				$.init({

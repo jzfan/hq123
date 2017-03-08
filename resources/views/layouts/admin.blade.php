@@ -19,6 +19,8 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/admin-lte/dist/css/skins/_all-skins.min.css">
+  
+  <link href="/libs/lightbox2/css/lightbox.css" rel="stylesheet">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -231,10 +233,9 @@
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 2.3.11
+      <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">恩施乾源通</a>.</strong> 版权所有
   </footer>
 
   <!-- Control Sidebar -->
@@ -446,6 +447,7 @@
 <script src="/admin-lte/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/admin-lte/dist/js/demo.js"></script>
+<script src="/libs/lightbox2/js/lightbox.js"></script>
 <script>
     $.ajaxSetup({
         headers: {

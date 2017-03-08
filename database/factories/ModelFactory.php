@@ -17,10 +17,13 @@ $factory->define(Wx\User\User::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name,
+        'real_name' => $faker->name,
+        'city' => $faker->city,
         'email' => $faker->unique()->safeEmail,
         'phone' => (string) mt_rand(13000000000, 18999999999),
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+        'openid' => str_random(22),
         'api_token' => str_random(60),
     ];
 });
@@ -35,41 +38,76 @@ $factory->define(Wx\File\File::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(Wx\Loan\Apply::class, function (Faker\Generator $faker) {
-    return [
-        'profession' => (string)mt_rand(1, 3),
-        'id_num' => $faker->creditCardNumber,
-        'address' => $faker->address,
-        'amount' => $faker->randomNumber,
-        'worked_since' => $faker->date(),
-        'paid_by' => $faker->word,
-        'yanglaobaoxian' => $faker->word,
-        'gongjijin' => $faker->word,
-        'qitabaoxian' => $faker->word,
-        'fangchan' => $faker->word,
-        'shenyileixin' => $faker->word,
-        'jinyinshijian' => $faker->word,
-        'gerenzhangu' => $faker->word,
-        'address' => $faker->address,
-        'salary' => $faker->numberBetween('2000', '50000'),
-        'turnover' => $faker->numberBetween('20000', '5000000'),
-        'amount' => $faker->numberBetween('2000', '500000'),
-        'status' => (string)mt_rand(1, 3),
+// $factory->define(Wx\Loan\Apply::class, function (Faker\Generator $faker) {
+//     return [
+//         'profession' => (string)mt_rand(1, 3),
+//         'id_num' => $faker->creditCardNumber,
+//         'address' => $faker->address,
+//         'amount' => $faker->randomNumber,
+//         'worked_since' => $faker->date(),
+//         'paid_by' => $faker->word,
+//         'yanglaobaoxian' => $faker->word,
+//         'gongjijin' => $faker->word,
+//         'qitabaoxian' => $faker->word,
+//         'fangchan' => $faker->word,
+//         'shenyileixin' => $faker->word,
+//         'jinyinshijian' => $faker->word,
+//         'gerenzhangu' => $faker->word,
+//         'address' => $faker->address,
+//         'salary' => $faker->numberBetween('2000', '50000'),
+//         'turnover' => $faker->numberBetween('20000', '5000000'),
+//         'amount' => $faker->numberBetween('2000', '500000'),
+//         'status' => (string)mt_rand(1, 3),
 
-    ];
-});
+//     ];
+// });
 
 $factory->define(Wx\Loan\Car::class, function (Faker\Generator $faker) {
     return [
-        'real_name' => $faker->name,
-        'phone' => (string) mt_rand(13000000000, 18999999999),
-        'city' => $faker->city,
         'brand' => $faker->company,
+        'plate_number' => $faker->ean8,
         'location' => $faker->city,
         'bought_at' => $faker->dateTime(),
         'paid_by' => $faker->creditCardType,
         'duration' => mt_rand(1, 22),
-        'loan' => mt_rand(1, 100) * 10000
+        'loan' => mt_rand(1, 100) * 10000,
+        'status' => (string)mt_rand(1, 3),
+    ];
+});
 
+$factory->define(Wx\Loan\House::class, function (Faker\Generator $faker) {
+    return [
+        'bought_at' => $faker->dateTime(),
+        'paid_by' => $faker->creditCardType,
+        'assess' => mt_rand(1, 100) * 10000,
+        'duration' => mt_rand(1, 22),
+        'loan' => mt_rand(1, 100) * 10000,
+        'status' => (string)mt_rand(1, 3),
+    ];
+});
+
+$factory->define(Wx\Loan\Fund::class, function (Faker\Generator $faker) {
+    return [
+        'company' => $faker->company,
+        'location' => $faker->address,
+        'worked_at' => $faker->dateTime(),
+        'insurence' => mt_rand(10000, 999999),
+        'fund' => mt_rand(10000, 999999),
+        'duration' => mt_rand(1, 22),
+        'loan' => mt_rand(1, 100) * 10000,
+        'status' => (string)mt_rand(1, 3),
+    ];
+});
+
+$factory->define(Wx\Loan\Business::class, function (Faker\Generator $faker) {
+    return [
+        'company' => $faker->company,
+        'house' => $faker->address,
+        'registered_at' => $faker->dateTime(),
+        'share' => mt_rand(1, 100),
+        'annual_turnover' => mt_rand(1, 100) * 10000,
+        'loan' => mt_rand(1, 100) * 10000,
+        'duration' => mt_rand(1, 44),
+        'status' => (string)mt_rand(1, 3),
     ];
 });

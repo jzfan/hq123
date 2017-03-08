@@ -27,48 +27,6 @@
         <li><a href="/dashboard"><i class="fa fa-dashboard"></i> <span>控制台</span></a></li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-briefcase"></i> <span>上班族</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="/applies/pending?pro=worker"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
-            <li><a href="/applies/passed?pro=worker"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
-            <li><a href="/applies?pro=worker"><i class="fa fa-circle-o text-aqua"></i> 一览</a></li>
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-coffee"></i> <span>生意人</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="/applies/pending?pro=businessman"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
-            <li><a href="/applies/passed?pro=businessman"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
-            <li><a href="/applies?pro=businessman"><i class="fa fa-circle-o text-aqua"></i> 一览</a></li>
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-random"></i> <span>上班&生意</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="/applies/pending?pro=both"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
-            <li><a href="/applies/passed?pro=both"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
-            <li><a href="/applies?pro=both"><i class="fa fa-circle-o text-aqua"></i> 一览</a></li>
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
             <i class="fa fa-car"></i> <span>汽车</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -77,7 +35,49 @@
           <ul class="treeview-menu">
             <li><a href="/cars/pending"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
             <li><a href="/cars/passed"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
-            <li><a href="/cars"><i class="fa fa-circle-o text-aqua"></i> 一览</a></li>
+            <li><a href="/cars/failed"><i class="fa fa-circle-o text-aqua"></i> 拒绝</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-home"></i> <span>房屋</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/houses/pending"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
+            <li><a href="/houses/passed"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
+            <li><a href="/houses/failed"><i class="fa fa-circle-o text-aqua"></i> 拒绝</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-money"></i> <span>公积金</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/funds/pending"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
+            <li><a href="/funds/passed"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
+            <li><a href="/funds/failed"><i class="fa fa-circle-o text-aqua"></i> 拒绝</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-coffee"></i> <span>生意</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/business/pending"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
+            <li><a href="/business/passed"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
+            <li><a href="/business/failed"><i class="fa fa-circle-o text-aqua"></i> 拒绝</a></li>
           </ul>
         </li>
 

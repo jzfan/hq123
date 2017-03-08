@@ -5,13 +5,13 @@
 <title>乾源通首页</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
-<link rel="stylesheet" type="text/css" href="Assets/css/reset.css">
-<script type="text/javascript" src="Assets/js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="Assets/js/js_z.js"></script>
-<script type="text/javascript" src="Assets/js/banner.js"></script>
-<script type="text/javascript" src="Assets/js/index.js"></script>
-<link rel="stylesheet" type="text/css" href="Assets/css/thems.css">
-<link rel="stylesheet" type="text/css" href="Assets/css/responsive.css">
+<link rel="stylesheet" type="text/css" href="/wx/Assets/css/reset.css">
+<script type="text/javascript" src="/wx/Assets/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/wx/Assets/js/js_z.js"></script>
+<script type="text/javascript" src="/wx/Assets/js/banner.js"></script>
+<script type="text/javascript" src="/wx/Assets/js/index.js"></script>
+<link rel="stylesheet" type="text/css" href="/wx/Assets/css/thems.css">
+<link rel="stylesheet" type="text/css" href="/wx/Assets/css/responsive.css">
 <script language="javascript">
 $(function(){
     $('#owl-demo').owlCarousel({
@@ -44,7 +44,7 @@ body{ overflow:hidden;}
         <div class="sct_a">
             <div id="banner" class="banner"> 
                 <div id="owl-demo" class="owl-carousel owl-theme" style="opacity: 1; display: block;"> 
-                    <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 3312px; left: 0px; display: block; transform: translate3d(0px, 0px, 0px); transition: all 1000ms ease;"><div class="owl-item" style="width: 414px;"><a class="item" target="_blank" href="" style="background-image:url(Assets/upload/banner_a.jpg)">&nbsp;</a></div><div class="owl-item" style="width: 414px;"><a class="item" target="_blank" href="" style="background-image:url(Assets/upload/banner_a.jpg)">&nbsp; </a></div><div class="owl-item" style="width: 414px;"><a class="item" target="_blank" href="" style="background-image:url(Assets/upload/banner_a.jpg)">&nbsp;</a></div><div class="owl-item" style="width: 414px;"><a class="item" target="_blank" href="" style="background-image:url(Assets/upload/banner_a.jpg)">&nbsp;</a></div></div></div>
+                    <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 3312px; left: 0px; display: block; transform: translate3d(0px, 0px, 0px); transition: all 1000ms ease;"><div class="owl-item" style="width: 414px;"><a class="item" target="_blank" href="" style="background-image:url(/wx/Assets/upload/banner_a.jpg)">&nbsp;</a></div><div class="owl-item" style="width: 414px;"><a class="item" target="_blank" href="" style="background-image:url(/wx/Assets/upload/banner_a.jpg)">&nbsp; </a></div><div class="owl-item" style="width: 414px;"><a class="item" target="_blank" href="" style="background-image:url(/wx/Assets/upload/banner_a.jpg)">&nbsp;</a></div><div class="owl-item" style="width: 414px;"><a class="item" target="_blank" href="" style="background-image:url(/wx/Assets/upload/banner_a.jpg)">&nbsp;</a></div></div></div>
                     
                     
                     
@@ -94,7 +94,7 @@ body{ overflow:hidden;}
     </div>
     <div class="section section-2">
         <div class="i_title">
-            <img src="Assets/images/n1.png" alt="" width="293" height="32">
+            <img src="/wx/Assets/images/n1.png" alt="" width="293" height="32">
             <p>了解乾源通</p>
         </div>
         <div class="space_hx">&nbsp;</div>
@@ -102,8 +102,8 @@ body{ overflow:hidden;}
             <li>
                 <a href="about.html">
                     <div class="tu">
-                        <img src="Assets/images/icon2.png" alt="" class="red">
-                        <img src="Assets/images/icon2_1.png" alt="" class="white">
+                        <img src="/wx/Assets/images/icon2.png" alt="" class="red">
+                        <img src="/wx/Assets/images/icon2_1.png" alt="" class="white">
                     </div>
                     <p>贷款申请</p>
                 </a>
@@ -111,8 +111,8 @@ body{ overflow:hidden;}
             <li>
                 <a href="paner.html">
                     <div class="tu">
-                        <img src="Assets/images/icon3.png" alt="" class="red">
-                        <img src="Assets/images/icon3_1.png" alt="" class="white">
+                        <img src="/wx/Assets/images/icon3.png" alt="" class="red">
+                        <img src="/wx/Assets/images/icon3_1.png" alt="" class="white">
                     </div>
                     <p>渠道进件</p>
                 </a>
@@ -120,8 +120,8 @@ body{ overflow:hidden;}
             <li>
                 <a href="">
                     <div class="tu">
-                        <img src="Assets/images/icon4.png" alt="" class="red">
-                        <img src="Assets/images/icon4_1.png" alt="" class="white">
+                        <img src="/wx/Assets/images/icon4.png" alt="" class="red">
+                        <img src="/wx/Assets/images/icon4_1.png" alt="" class="white">
                     </div>
                     <p>贷款类型</p>
                 </a>
@@ -129,8 +129,8 @@ body{ overflow:hidden;}
             <li>
                 <a href="contact.html">
                     <div class="tu">
-                        <img src="Assets/images/icon5.png" alt="" class="red">
-                        <img src="Assets/images/icon5_1.png" alt="" class="white">
+                        <img src="/wx/Assets/images/icon5.png" alt="" class="red">
+                        <img src="/wx/Assets/images/icon5_1.png" alt="" class="white">
                     </div>
                     <p>联系我们</p>
                 </a>
@@ -138,8 +138,8 @@ body{ overflow:hidden;}
             <li>
                 <a href="">
                     <div class="tu">
-                        <img src="Assets/images/icon6.png" alt="" class="red">
-                        <img src="Assets/images/icon6_1.png" alt="" class="white">
+                        <img src="/wx/Assets/images/icon6.png" alt="" class="red">
+                        <img src="/wx/Assets/images/icon6_1.png" alt="" class="white">
                     </div>
                     <p>总裁致辞</p>
                 </a>
@@ -148,15 +148,15 @@ body{ overflow:hidden;}
     </div>
     <div class="section section-3">
         <div class="i_title">
-            <img src="Assets/images/n2.png" alt="" width="375" height="32">
+            <img src="/wx/Assets/images/n2.png" alt="" width="375" height="32">
             <p>我们的贷款产品？</p>
         </div>
         <div class="space_hx">&nbsp;</div>
         <div class="mainPhoto">
-            <span class="goleft nextPage"><a href="javascript:void(0)"><img src="Assets/images/prev.png" alt=""></a></span>
+            <span class="goleft nextPage"><a href="javascript:void(0)"><img src="/wx/Assets/images/prev.png" alt=""></a></span>
               <div class="go slidegrid">
                 <ul class="slideitems i_service clearfix" style="left: -21.7188px;"><li class="cloned">
-                        <div class="tu"><img src="Assets/images/p5.png" alt=""></div>
+                        <div class="tu"><img src="/wx/Assets/images/p5.png" alt=""></div>
                         <div class="wen">
                             <div class="name">社保、公积金贷</div>
                             <p>适用人群——由单位购买了社保或者公积金,放款速度 最快一天,最高额度 50万,贷款期限 1-36个月</p>
@@ -164,7 +164,7 @@ body{ overflow:hidden;}
                         </div>
                     </li>
                     <li>
-                        <div class="tu"><img src="Assets/images/p1.png" alt=""></div>
+                        <div class="tu"><img src="/wx/Assets/images/p1.png" alt=""></div>
                         <div class="wen">
                             <div class="name">汽车抵押贷款</div>
                             <p>适用人群--全款购买的汽车或已结清按揭的车辆,放款速度 最快一天,最高额度 100万,贷款期限 1-36个月</p>
@@ -177,10 +177,10 @@ body{ overflow:hidden;}
                             <p>适用人群——拥有一年以上的营业执照,放款速度 最快一天,最高额度 100万,贷款期限 1-36个月</p>
                             <a href="service.html">+MORE</a>
                         </div>
-                        <div class="tu"><img src="Assets/images/p2.png" alt=""></div>
+                        <div class="tu"><img src="/wx/Assets/images/p2.png" alt=""></div>
                     </li>
                     <li>
-                        <div class="tu"><img src="Assets/images/p3.png" alt=""></div>
+                        <div class="tu"><img src="/wx/Assets/images/p3.png" alt=""></div>
                         <div class="wen">
                             <div class="name">房屋抵押贷款</div>
                             <p>适用人群——全款购买的房屋,放款速度 最快三天,最高额度  2000万,贷款期限 1-36个月</p>
@@ -193,10 +193,10 @@ body{ overflow:hidden;}
                             <p>适用人群——拥有大陆居民身份证、年满18周岁,放款速度 最快一天,最高额度 3万,贷款期限 1-3个月</p>
                             <a href="service.html">+MORE</a>
                         </div>
-                        <div class="tu"><img src="Assets/images/p4.png" alt=""></div>
+                        <div class="tu"><img src="/wx/Assets/images/p4.png" alt=""></div>
                     </li>
                     <li>
-                        <div class="tu"><img src="Assets/images/p5.png" alt=""></div>
+                        <div class="tu"><img src="/wx/Assets/images/p5.png" alt=""></div>
                         <div class="wen">
                             <div class="name">社保、公积金贷</div>
                             <p>适用人群——由单位购买了社保或者公积金,放款速度 最快一天,最高额度 50万,贷款期限 1-36个月.</p>
@@ -204,7 +204,7 @@ body{ overflow:hidden;}
                         </div>
                     </li>
                 <li class="cloned">
-                        <div class="tu"><img src="Assets/images/p1.png" alt=""></div>
+                        <div class="tu"><img src="/wx/Assets/images/p1.png" alt=""></div>
                         <div class="wen">
                             <div class="name">房屋抵押贷款</div>
                             <p>适用人群——全款购买的房屋,放款速度 最快三天,最高额度  2000万,贷款期限 1-36个月</p>
@@ -212,23 +212,23 @@ body{ overflow:hidden;}
                         </div>
                     </li></ul>
               </div>
-              <span class="goright prevPage"><a href="javascript:void(0)"><img src="Assets/images/next.png" alt=""></a></span>
+              <span class="goright prevPage"><a href="javascript:void(0)"><img src="/wx/Assets/images/next.png" alt=""></a></span>
         </div>
     </div>
     <div class="section section-4">
         <div class="i_title">
-            <img src="Assets/images/n3.png" alt="" width="360" height="32">
+            <img src="/wx/Assets/images/n3.png" alt="" width="360" height="32">
             <p>我们的在线系统！</p>
         </div>
         <div class="space_hx">&nbsp;</div>
         <div class="mainPhoto">
-            <span class="goleft nextPage"><a href="javascript:void(0)"><img src="Assets/images/prev.png" alt=""></a></span>
+            <span class="goleft nextPage"><a href="javascript:void(0)"><img src="/wx/Assets/images/prev.png" alt=""></a></span>
               <div class="go slidegrid">
                 <ul class="slideitems i_new clearfix" style="left: 0px;"><li class="cloned">
                         <a href="news.html">
                             <div class="tu">
-                                <img src="Assets/upload/pic3.jpg" alt="">
-                                <div class="bg_a"><img src="Assets/images/icon7.png" alt=""></div>
+                                <img src="/wx/Assets/upload/pic3.jpg" alt="">
+                                <div class="bg_a"><img src="/wx/Assets/images/icon7.png" alt=""></div>
                             </div>
                             <div class="wen">
                                 <p>期待你的加入</p>
@@ -240,8 +240,8 @@ body{ overflow:hidden;}
                     <li>
                         <a href="news_a.html">
                             <div class="tu">
-                                <img src="Assets/upload/pic1.jpg" alt="">
-                                <div class="bg_a"><img src="Assets/images/icon7.png" alt=""></div>
+                                <img src="/wx/Assets/upload/pic1.jpg" alt="">
+                                <div class="bg_a"><img src="/wx/Assets/images/icon7.png" alt=""></div>
                             </div>
                             <div class="wen">
                                 <p>在线申请</p>
@@ -253,8 +253,8 @@ body{ overflow:hidden;}
                     <li>
                         <a href="news.html">
                             <div class="tu">
-                                <img src="Assets/upload/pic2.jpg" alt="">
-                                <div class="bg_a"><img src="Assets/images/icon7.png" alt=""></div>
+                                <img src="/wx/Assets/upload/pic2.jpg" alt="">
+                                <div class="bg_a"><img src="/wx/Assets/images/icon7.png" alt=""></div>
                             </div>
                             <div class="wen">
                                 <p>贷款进度</p>
@@ -266,8 +266,8 @@ body{ overflow:hidden;}
                     <li>
                         <a href="news_a.html">
                             <div class="tu">
-                                <img src="Assets/upload/pic1.jpg" alt="">
-                                <div class="bg_a"><img src="Assets/images/icon7.png" alt=""></div>
+                                <img src="/wx/Assets/upload/pic1.jpg" alt="">
+                                <div class="bg_a"><img src="/wx/Assets/images/icon7.png" alt=""></div>
                             </div>
                             <div class="wen">
                                 <p>在线申请</p>
@@ -279,8 +279,8 @@ body{ overflow:hidden;}
                 <li class="cloned">
                         <a href="news_a.html">
                             <div class="tu">
-                                <img src="Assets/upload/pic1.jpg" alt="">
-                                <div class="bg_a"><img src="Assets/images/icon7.png" alt=""></div>
+                                <img src="/wx/Assets/upload/pic1.jpg" alt="">
+                                <div class="bg_a"><img src="/wx/Assets/images/icon7.png" alt=""></div>
                             </div>
                             <div class="wen">
                                 <p>公司新闻</p>
@@ -290,18 +290,18 @@ body{ overflow:hidden;}
                         </a>
                     </li></ul>
               </div>
-              <span class="goright prevPage"><a href="javascript:void(0)"><img src="Assets/images/next.png" alt=""></a></span>
+              <span class="goright prevPage"><a href="javascript:void(0)"><img src="/wx/Assets/images/next.png" alt=""></a></span>
           </div>
         <div class="i_more"><a href="news.html">MORE</a></div>
     </div>
     <div class="section section-5">
         <div class="i_title">
-            <img src="Assets/images/n4.png" alt="" width="387" height="32">
+            <img src="/wx/Assets/images/n4.png" alt="" width="387" height="32">
             <p>欢迎您加入乾源通大家庭！</p>
         </div>
         <div class="space_hx">&nbsp;</div>
         <div class="mainPhoto"> 
-            <span class="goleft nextPage"><a href="javascript:void(0)"><img src="Assets/images/prev.png" alt=""></a></span>
+            <span class="goleft nextPage"><a href="javascript:void(0)"><img src="/wx/Assets/images/prev.png" alt=""></a></span>
               <div class="go slidegrid">
                 <ul class="slideitems i_member clearfix" style="left: 0px;"><li class="cloned">
                     <a href="join.html">
@@ -346,13 +346,13 @@ body{ overflow:hidden;}
                     </a>
                 </li></ul>
               </div>
-              <span class="goright prevPage"><a href="javascript:void(0)"><img src="Assets/images/next.png" alt=""></a></span>
+              <span class="goright prevPage"><a href="javascript:void(0)"><img src="/wx/Assets/images/next.png" alt=""></a></span>
           </div>
     </div>
 </div>
 <div class="header">
     <div class="head clearfix">
-        <div class="logo"><img src="Assets/images/logo.png" alt=""></div>
+        <div class="logo"><img src="/wx/Assets/images/logo.png" alt=""></div>
         <div class="nav">
             <div class="nav_ico">&nbsp;</div>
             <ul class="section-btn">
@@ -363,7 +363,7 @@ body{ overflow:hidden;}
               <li class="">加入乾源通</li>
             </ul>
         </div>
-        <div class="h_tel"><a href="tel:15623926392"><img src="Assets/images/tel.png" alt=""></a></div>
+        <div class="h_tel"><a href="tel:15623926392"><img src="/wx/Assets/images/tel.png" alt=""></a></div>
     </div>
 </div>
 <div class="arrow">&nbsp;</div>
