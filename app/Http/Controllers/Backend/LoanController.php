@@ -36,17 +36,17 @@ class LoanController extends Controller
 		return view("backend.{$this->resource}.passed", compact('models'));
 	}
 
-    public function unpass($id)
+    public function unpass($resource, $id)
 	{
 		return response()->json(['data'=>$this->repo->unpass($id)]);
 	}
 
-	public function pass($id)
+	public function pass($resource, $id)
 	{
 		return response()->json(['data'=>$this->repo->pass($id)]);
 	}
 
-	public function reject($id)
+	public function reject($resource, $id)
 	{
 		return response()->json(['data'=>$this->repo->reject($id)]);
 	}

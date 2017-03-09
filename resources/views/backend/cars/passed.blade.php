@@ -69,7 +69,7 @@
 <script>
 function unpass(id, btn)
 {
-    $.post('/models/'+id+'/unpass' ,{}, function(result){
+    $.post('/cars/'+id+'/unpass' ,{}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show(); 
     });
@@ -77,7 +77,7 @@ function unpass(id, btn)
 
 function reject(id, btn)
 {
-    $.post('/models/'+id+'/reject', {}, function(result){
+    $.post('/cars/'+id+'/reject', {}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show();
     });

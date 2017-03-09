@@ -33,9 +33,10 @@ class LoanController extends Controller
     {
         // dd($request->all());
         $this->validate($request, [
-                'loan' => 'required|numeric'
+                'loan' => 'required|numeric',
+                'duration' => 'required|integer'
             ]);
-        $result = $this->getRepo($resource)->save($request->except(['_token', '_method']));
+        $result = $this->getRepo($resource)->save($request->except(['_token']));
         return response()->json(['data'=>'ok', 'code'=>201]);
     }
 }

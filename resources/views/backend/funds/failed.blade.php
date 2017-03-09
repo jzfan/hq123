@@ -24,12 +24,12 @@
       <div class="box-footer no-padding">
         <ul class="nav nav-stacked">
           <li><a href="#">手机 <span class="pull-right">{{ $model->user->phone }}</span></a></li>
-          <li><a href="#">贷款额度 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ $model->loan }}</span></a></li>
+          <li><a href="#">贷款额度 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ number_format($model->loan) }}元</span></a></li>
           <li><a href="#">单位 <span class="pull-right">{{ $model->company }}</span></a></li>
           <li><a href="#">入职时间 <span class="pull-right">{{ $model->worked_at }}</span></a></li>
           <li><a href="#">期限<span class="pull-right">{{ $model->duration }}(月) </span></a></li>
-          <li><a href="#">社保 <span class="pull-right">{{ $model->insurence }}</span></a></li>
-          <li><a href="#">公积金 <span class="pull-right">{{ $model->fund }}</span></a></li>
+          <li><a href="#">社保 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ number_format($model->insurance) }}元</span></a></li>
+          <li><a href="#">公积金 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ number_format($model->fund) }}元</span></a></li>
           <li><a href="###">审批操作 <span class="pull-right">
             <button class='btn btn-default bg-green btn-xs' onclick='pass({{ $model->id }}, this)'><span class="fa fa-check" aria-hidden="true"></span> 通过</button>
             <button class='btn btn-default bg-blue btn-xs' onclick='unpass({{ $model->id }}, this)'><span class="fa fa-reply" aria-hidden="true"></span> 待审</button>
@@ -69,7 +69,7 @@
 <script>
 function pass(id, btn)
 {
-    $.post('/models/'+id+'/pass' ,{}, function(result){
+    $.post('/funds/'+id+'/pass' ,{}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show(); 
 
@@ -78,7 +78,7 @@ function pass(id, btn)
 
 function unpass(id, btn)
 {
-    $.post('/models/'+id+'/unpass', {}, function(result){
+    $.post('/funds/'+id+'/unpass', {}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show();
     });

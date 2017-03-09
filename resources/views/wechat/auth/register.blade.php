@@ -17,8 +17,9 @@
 				<div class="mui-msg">
 					乾源通用户注册系统
 				</div>
-			<form id='login-form' class="mui-input-group" action="/wechat/register" method="POST">
-				{{ csrf_field() }}
+			<form action="/wechat/register" method="POST">
+			{{ csrf_field() }}
+			<div id='login-form' class="mui-input-group" >
 				<div class="mui-input-row">
 					<label>手机</label>
 					<input id='account' type="text" class="mui-input-clear mui-input" name='phone' placeholder="请输入手机号">
@@ -27,6 +28,8 @@
 					<label>密码</label>
 					<input id='password' type="password" class="mui-input-clear mui-input" name='password' placeholder="请输入密码">
 				</div>
+			</div>
+
 			<div class="mui-content-padded">
 				<button id='login' class="mui-btn mui-btn-block mui-btn-danger" type='submit'>注册</button>
 				<div class="link-area"><a id='reg' href="login.html">已有账号？</a> <span class="spliter">|</span> <a id='forgetPassword'>在线客服</a>

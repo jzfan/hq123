@@ -25,11 +25,6 @@ Route::group(['namespace'=>'Frontend'], function () {
 
 Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'admin']], function () {
 	Route::get('/dashboard', 'DashboardController@index');
-	// Route::get('/applies', 'ApplyController@index');
-	// Route::get('/applies/pending', 'ApplyController@pending');
-	// Route::get('/applies/passed', 'ApplyController@passed');
-	// Route::post('/applies/{id}/pass', 'ApplyController@pass');
-	// Route::post('/applies/{id}/reject', 'ApplyController@reject');
 
 	Route::get('/{resource}/failed', 'LoanController@failed');
 	Route::get('/{resource}/pending', 'LoanController@pending');

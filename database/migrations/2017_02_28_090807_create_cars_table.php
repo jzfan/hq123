@@ -21,7 +21,7 @@ class CreateCarsTable extends Migration
             $table->string('brand');
             $table->string('plate_number');
             $table->string('location');
-            $table->string('bought_at');
+            $table->timestamp('bought_at');
             $table->string('paid_by');
             $table->enum('status', ['pending', 'passed', 'failed'])->default('pending');
             $table->timestamps();

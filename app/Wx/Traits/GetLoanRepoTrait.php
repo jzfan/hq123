@@ -16,7 +16,7 @@ trait GetLoanRepoTrait
 			case 'businesses':
 				return new \Wx\Loan\Repo\BusinessRepo;		
 			default:
-				throw new \Exception("url error", 400);
+				// throw new \Exception("url error", 400);
 				break;
 		}
 	}

@@ -25,11 +25,9 @@
         <ul class="nav nav-stacked">
           <li><a href="#">手机 <span class="pull-right">{{ $model->user->phone }}</span></a></li>
           <li><a href="#">贷款额度 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ $model->loan }}</span></a></li>
-          <li><a href="#">车牌号 <span class="pull-right">{{ $model->plate_number }}</span></a></li>
-          <li><a href="#">期限<span class="pull-right">{{ $model->duration }}(月) </span></a></li>
-          <li><a href="#">汽车品牌 <span class="pull-right">{{ $model->brand }}</span></a></li>
-          <li><a href="#">购买日期 <span class="pull-right">{{ $model->bought_at }}</span></a></li>
-          <li><a href="#">付款方式 <span class="pull-right">{{ $model->paid_by }}</span></a></li>
+          <li><a href="#">购买于 <span class="pull-right">{{ $model->bought_at->format('Y-m-d') }}</span></a></li>
+          <li><a href="#">购买方式<span class="pull-right">{{ $model->paid_by }} </span></a></li>
+          <li><a href="#">估价 <span class="pull-right">{{ $model->assess }}</span></a></li>
           <li><a href="###">审批操作 <span class="pull-right">
             <button class='btn btn-default bg-green btn-xs' onclick='pass({{ $model->id }}, this)'><span class="fa fa-check" aria-hidden="true"></span> 通过</button>
             <button class='btn btn-default bg-blue btn-xs' onclick='unpass({{ $model->id }}, this)'><span class="fa fa-reply" aria-hidden="true"></span> 待审</button>
@@ -69,7 +67,7 @@
 <script>
 function pass(id, btn)
 {
-    $.post('/models/'+id+'/pass' ,{}, function(result){
+    $.post('/houses/'+id+'/pass' ,{}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show(); 
 
@@ -78,7 +76,7 @@ function pass(id, btn)
 
 function unpass(id, btn)
 {
-    $.post('/models/'+id+'/unpass', {}, function(result){
+    $.post('/houses/'+id+'/unpass', {}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show();
     });

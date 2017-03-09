@@ -18,7 +18,7 @@ class CreateHousesTable extends Migration
             $table->unsignedInteger('user_id');
             $table->integer('loan');
             $table->smallInteger('duration');
-            $table->string('bought_at');
+            $table->timestamp('bought_at');
             $table->string('paid_by');
             $table->string('assess');
             $table->enum('status', ['pending', 'passed', 'failed'])->default('pending');

@@ -69,7 +69,7 @@
 <script>
 function pass(id, btn)
 {
-    $.post('/models/'+id+'/pass' ,{}, function(result){
+    $.post('/businesses/'+id+'/pass' ,{}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show(); 
 
@@ -78,7 +78,7 @@ function pass(id, btn)
 
 function reject(id, btn)
 {
-    $.post('/models/'+id+'/reject', {}, function(result){
+    $.post('/businesses/'+id+'/reject', {}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show();
     });

@@ -32,7 +32,7 @@
 					<h5 style="clear: left;">贷款金额：<span id="block-range-val">100</span><span>万</span></h5>
 
 					<div class="mui-input-row mui-input-range">
-				        <input type="range" id="block-range" value="1" min="0" max="100" data-input-slider="4"><span class="mui-tooltip mui-hidden" style="left: 328px;">100</span>
+				        <input type="range" id="block-range" value="1" min="0" max="100" data-input-slider="4" name="loan"><span class="mui-tooltip mui-hidden" style="left: 328px;">100</span>
 				    </div>
 
 				  <div class="mui-input-row mui-input-range field-contain">
@@ -41,7 +41,7 @@
 		                <input type="text" id="field-range-input" value="36" style="border:none">期</h5>
 		            </div>
 		            <div>
-		                <input type="range" id="field-range" value="60" min="0" max="36" data-input-slider="2"><span class="mui-tooltip mui-hidden">36</span>
+		                <input type="range" id="field-range" value="60" min="0" max="36" data-input-slider="2" name="duration"><span class="mui-tooltip mui-hidden">36</span>
 		            </div>
 		        </div>
 		        </div>
@@ -53,42 +53,42 @@
 				<div class="mui-input-group">
 					<div class="mui-input-row">
 						<label>真实姓名</label>
-						<input type="text" class="mui-input-clear mui-input" placeholder="请输入真实姓名">
+						<input type="text" class="mui-input-clear mui-input" placeholder="请输入真实姓名" name='real_name' >
 					</div>
 
 					<div class="mui-input-row">
 						<label>手机号码</label>
-						<input type="number" class="mui-input-clear mui-input" placeholder="请输入手机号码">
+						<input type="number" class="mui-input-clear mui-input" placeholder="请输入手机号码" name='phone'>
 					</div>
 
 					<div class="mui-input-row">
 						<label>当前城市</label>
-						<input type="text" class="mui-input-clear" placeholder="" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+						<input type="text" class="mui-input-clear" placeholder="" data-input-clear="5" name="city"><span class="mui-icon mui-icon-clear mui-hidden"></span>
 					</div>
 
 					<div class="mui-input-row">
 						<label>公司全称</label>
-						<input type="text" placeholder="请输入公司全称">
+						<input type="text" placeholder="请输入公司全称" name="company">
 					</div>
 
 					<div class="mui-input-row">
 						<label>注册日期</label>
-						<input type="date" placeholder="请选择">
+						<input type="date" placeholder="请选择" name="registered_at">
 					</div>
 
 					<div class="mui-input-row">
 						<label>占股比例</label>
-						<input type="text" placeholder="请选择" id="percent">
+						<input type="text" placeholder="请选择" id="percent" name="share">
 					</div>
 
 					<div class="mui-input-row">
 						<label>年营业额</label>
-						<input type="text" placeholder="请输入年营业额(万元)">
+						<input type="text" placeholder="请输入年营业额(万元)" name="annual_turnover">
 					</div>
 
 					<div class="mui-input-row">
 						<label>房产情况</label>
-						<input type="text" placeholder="请选择" id="home">
+						<input type="text" placeholder="请选择" id="home" name="house">
 					</div>
 
 				</div>

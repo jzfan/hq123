@@ -38,30 +38,6 @@ $factory->define(Wx\File\File::class, function (Faker\Generator $faker) {
     ];
 });
 
-// $factory->define(Wx\Loan\Apply::class, function (Faker\Generator $faker) {
-//     return [
-//         'profession' => (string)mt_rand(1, 3),
-//         'id_num' => $faker->creditCardNumber,
-//         'address' => $faker->address,
-//         'amount' => $faker->randomNumber,
-//         'worked_since' => $faker->date(),
-//         'paid_by' => $faker->word,
-//         'yanglaobaoxian' => $faker->word,
-//         'gongjijin' => $faker->word,
-//         'qitabaoxian' => $faker->word,
-//         'fangchan' => $faker->word,
-//         'shenyileixin' => $faker->word,
-//         'jinyinshijian' => $faker->word,
-//         'gerenzhangu' => $faker->word,
-//         'address' => $faker->address,
-//         'salary' => $faker->numberBetween('2000', '50000'),
-//         'turnover' => $faker->numberBetween('20000', '5000000'),
-//         'amount' => $faker->numberBetween('2000', '500000'),
-//         'status' => (string)mt_rand(1, 3),
-
-//     ];
-// });
-
 $factory->define(Wx\Loan\Car::class, function (Faker\Generator $faker) {
     return [
         'brand' => $faker->company,
@@ -91,7 +67,7 @@ $factory->define(Wx\Loan\Fund::class, function (Faker\Generator $faker) {
         'company' => $faker->company,
         'location' => $faker->address,
         'worked_at' => $faker->dateTime(),
-        'insurence' => mt_rand(10000, 999999),
+        'insurance' => mt_rand(10000, 999999),
         'fund' => mt_rand(10000, 999999),
         'duration' => mt_rand(1, 22),
         'loan' => mt_rand(1, 100) * 10000,

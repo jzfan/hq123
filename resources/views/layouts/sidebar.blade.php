@@ -75,9 +75,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/business/pending"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
-            <li><a href="/business/passed"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
-            <li><a href="/business/failed"><i class="fa fa-circle-o text-aqua"></i> 拒绝</a></li>
+            <li><a href="/businesses/pending"><i class="fa fa-circle-o text-yellow"></i> 待审</a></li>
+            <li><a href="/businesses/passed"><i class="fa fa-circle-o text-green"></i> 通过</a></li>
+            <li><a href="/businesses/failed"><i class="fa fa-circle-o text-aqua"></i> 拒绝</a></li>
           </ul>
         </li>
 
