@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/wechat';
+    protected $redirectTo = '/wechat/plist';
 
     /**
      * Create a new controller instance.

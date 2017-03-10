@@ -21,7 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('phone')->unique();
             $table->string('email')->unique()->nullable();
             $table->string('password');
-            $table->string('openid');
+            $table->string('openid')->nullable();
+            $table->enum('role', ['admin', 'editor', 'member'])->default('member');
             $table->rememberToken();
             $table->string('api_token', 60)->unique();
             $table->timestamps();

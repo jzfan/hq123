@@ -87,7 +87,7 @@ body{ overflow:hidden;}
                             </a>
                         </li>
                     </ul>
-                    <a href="news.html" class="more">More</a>
+                    <a href="" class="more">More</a>
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@ body{ overflow:hidden;}
         <div class="space_hx">&nbsp;</div>
         <ul class="i_about clearfix">
             <li>
-                <a href="about.html">
+                <a href="/wechat/plist">
                     <div class="tu">
                         <img src="/wx/Assets/images/icon2.png" alt="" class="red">
                         <img src="/wx/Assets/images/icon2_1.png" alt="" class="white">
@@ -109,7 +109,7 @@ body{ overflow:hidden;}
                 </a>
             </li>
             <li>
-                <a href="paner.html">
+                <a href="">
                     <div class="tu">
                         <img src="/wx/Assets/images/icon3.png" alt="" class="red">
                         <img src="/wx/Assets/images/icon3_1.png" alt="" class="white">
@@ -118,7 +118,7 @@ body{ overflow:hidden;}
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="/wechat/plist">
                     <div class="tu">
                         <img src="/wx/Assets/images/icon4.png" alt="" class="red">
                         <img src="/wx/Assets/images/icon4_1.png" alt="" class="white">
@@ -127,7 +127,7 @@ body{ overflow:hidden;}
                 </a>
             </li>
             <li>
-                <a href="contact.html">
+                <a href="tel:15623926392">
                     <div class="tu">
                         <img src="/wx/Assets/images/icon5.png" alt="" class="red">
                         <img src="/wx/Assets/images/icon5_1.png" alt="" class="white">
@@ -208,7 +208,7 @@ body{ overflow:hidden;}
                         <div class="wen">
                             <div class="name">房屋抵押贷款</div>
                             <p>适用人群——全款购买的房屋,放款速度 最快三天,最高额度  2000万,贷款期限 1-36个月</p>
-                            <a href="service.html">+MORE</a>
+                            <a href="">+MORE</a>
                         </div>
                     </li></ul>
               </div>
@@ -238,7 +238,7 @@ body{ overflow:hidden;}
                         </a>
                     </li>
                     <li>
-                        <a href="news_a.html">
+                        <a href="/wechat/plist">
                             <div class="tu">
                                 <img src="/wx/Assets/upload/pic1.jpg" alt="">
                                 <div class="bg_a"><img src="/wx/Assets/images/icon7.png" alt=""></div>
@@ -251,7 +251,7 @@ body{ overflow:hidden;}
                         </a>
                     </li>
                     <li>
-                        <a href="news.html">
+                        <a href="">
                             <div class="tu">
                                 <img src="/wx/Assets/upload/pic2.jpg" alt="">
                                 <div class="bg_a"><img src="/wx/Assets/images/icon7.png" alt=""></div>
@@ -264,7 +264,7 @@ body{ overflow:hidden;}
                         </a>
                     </li>
                     <li>
-                        <a href="news_a.html">
+                        <a href="/wechat/plist">
                             <div class="tu">
                                 <img src="/wx/Assets/upload/pic1.jpg" alt="">
                                 <div class="bg_a"><img src="/wx/Assets/images/icon7.png" alt=""></div>
@@ -292,7 +292,7 @@ body{ overflow:hidden;}
               </div>
               <span class="goright prevPage"><a href="javascript:void(0)"><img src="/wx/Assets/images/next.png" alt=""></a></span>
           </div>
-        <div class="i_more"><a href="news.html">MORE</a></div>
+        <div class="i_more"><a href="">MORE</a></div>
     </div>
     <div class="section section-5">
         <div class="i_title">
@@ -304,42 +304,42 @@ body{ overflow:hidden;}
             <span class="goleft nextPage"><a href="javascript:void(0)"><img src="/wx/Assets/images/prev.png" alt=""></a></span>
               <div class="go slidegrid">
                 <ul class="slideitems i_member clearfix" style="left: 0px;"><li class="cloned">
-                    <a href="join.html">
+                    <a href="">
                         <div class="name">行政前台</div>
                         <div class="des">5年以上金融相关工作经验，有3年以上知名投行、投资机构或产业公司...</div>
                         <em>+MOER</em>
                     </a>
                 </li>
                     <li>
-                    <a href="join.html">
+                    <a href="">
                         <div class="name">投资经理</div>
                         <div class="des">5年以上金融相关工作经验，有3年以上知名投行、投资机构或产业公司...</div>
                         <em>+MOER</em>
                     </a>
                 </li>
                 <li>
-                    <a href="join.html">
+                    <a href="">
                         <div class="name">财富业务总监</div>
                         <div class="des">5年以上金融相关工作经验，有3年以上知名投行、投资机构或产业公司...</div>
                         <em>+MOER</em>
                     </a>
                 </li>
                 <li>
-                    <a href="join.html">
+                    <a href="">
                         <div class="name">金融产品设计师</div>
                         <div class="des">5年以上金融相关工作经验，有3年以上知名投行、投资机构或产业公司...</div>
                         <em>+MOER</em>
                     </a>
                 </li>
                 <li>
-                    <a href="join.html">
+                    <a href="">
                         <div class="name">行政前台</div>
                         <div class="des">5年以上金融相关工作经验，有3年以上知名投行、投资机构或产业公司...</div>
                         <em>+MOER</em>
                     </a>
                 </li>
                 <li class="cloned">
-                    <a href="join.html">
+                    <a href="">
                         <div class="name">投资经理</div>
                         <div class="des">5年以上金融相关工作经验，有3年以上知名投行、投资机构或产业公司...</div>
                         <em>+MOER</em>

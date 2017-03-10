@@ -9,7 +9,7 @@
     <!-- Widget: user widget style 1 -->
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h5>姓名：&nbsp;<span class="">{{ $model->user->real_name }}</span>&nbsp;<small class="label bg-yellow">{{ $model->status }}</small> </h5>
+        <h5>姓名：&nbsp;<span class="">{{ $model->user->real_name }}</span>&nbsp;<small class="label bg-green">{{ $model->status }}</small> </h5>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
           </button>

@@ -33,4 +33,9 @@ class AuthController extends Controller
 
         return redirect('/wechat/plist');
     }
+
+    public function loginForm()
+    {
+        return view('wechat.auth.login');
+    }
 }

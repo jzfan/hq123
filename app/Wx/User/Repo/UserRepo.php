@@ -14,16 +14,6 @@ class UserRepo
 		$this->user = $user;
 	}
 
-	public function byPage()
-	{
-		return $this->user->with('file', 'apply')->paginate(10);
-	}
-
-	public function new()
-	{
-		return $this->user->orderBy('id', 'desc')->take(8)->get();
-	}
-
 	public function count()
 	{
 		return $this->user->all()->count();

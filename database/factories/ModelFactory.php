@@ -14,7 +14,6 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Wx\User\User::class, function (Faker\Generator $faker) {
     static $password;
-
     return [
         'name' => $faker->name,
         'real_name' => $faker->name,
@@ -25,6 +24,7 @@ $factory->define(Wx\User\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
         'openid' => str_random(22),
         'api_token' => str_random(60),
+        'role' => (string)mt_rand(2, 3),
     ];
 });
 

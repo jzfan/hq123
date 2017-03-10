@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class AdminMiddleware
+class EditorMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,10 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (\Auth::user()->role === 'admin') {
+        $user = \Auth::user();
+        if ($user->role === 'editor' && $user->id == $request->id) {
             return $next($request);
         }
-        return redirect('/wechat/index');
+        return response()->json(['data'=>'auth failed', 'code'=>401]);
     }
 }

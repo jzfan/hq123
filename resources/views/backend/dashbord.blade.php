@@ -3,7 +3,7 @@
 @section('content')
 <div class="box box-info">
         <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
+          <h3 class="box-title">状态统计</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -14,43 +14,64 @@
         </div>
         <div class="box-body">
         <div class="row">
-            <div class="col-sm-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">个人用户</div>
-                    <div class="panel-body">
-                           <div class="list-group">
-                            @foreach ($users as $user)
-                             <a href="#" class="list-group-item">{{ $user->id }} {{ $user->name }}</a>
-                            @endforeach
-                           </div>
-                           <a class="pull-right" href='/applies?pro=worker'>>>more</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-sm-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">机构用户</div>
-                    <div class="panel-body">
-                       dashbord
-                    </div>
-                </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">最新申请</span>
+              <span class="info-box-number">{{ $counts['today'] }}</span>
             </div>
-            
-            <div class="col-sm-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
-                    <div class="panel-body">
-                       dashbord
-                    </div>
-                </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">已批准审核</span>
+              <span class="info-box-number">{{ $counts['passed'] }}</span>
             </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">待审状态</span>
+              <span class="info-box-number">{{ $counts['pending'] }}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">已拒绝</span>
+              <span class="info-box-number">{{ $counts['rejected'] }}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
 
         </div>
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          Footer
+          截至2017-3-9
         </div>
         <!-- /.box-footer-->
       </div>

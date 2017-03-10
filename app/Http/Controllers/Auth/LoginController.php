@@ -21,13 +21,6 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/dashboard';
-
-    /**
      * Create a new controller instance.
      *
      * @return void
@@ -35,5 +28,21 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
+    }
+
+    public function redirectTo()
+    {
+        $uri=request()->path();
+        if (strpos($uri, 'wechat') !== false) {
+            return '/wechat/plist';
+        }
+        if (\Auth::user()->isAdmin()) {
+            return '/dashboard';
+        }
+        if (\Auth::user()->isEditor()) {
+            return '/agents/'.\Auth::user()->id.'/b4';
+        }
+        return redirect('/');
+
     }
 }

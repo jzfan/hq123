@@ -10,9 +10,20 @@ abstract class BaseRepo
 	
 	abstract public function save($input);
 
+
 	public function __construct()
 	{
 		$this->model = $this->model();
+	}
+
+	public function counts()
+	{
+		return [
+			'today' => $this->todayCount(),
+			'pending' => $this->pendingCount(),
+			'passed' => $this->passedCount(),
+			'rejected' => $this->rejectedCount()
+		];
 	}
 
 	public function failed($n)
@@ -49,6 +60,26 @@ abstract class BaseRepo
 	{
 		$data = array_merge($input, ['user_id' => \Auth::user()->id]);
 		return $this->model->create($data);
+	}
+
+	public function todayCount()
+	{
+		return $this->model->where('created_at', '>', \Carbon\Carbon::today())->count();
+	}
+
+	public function pendingCount()
+	{
+		return $this->model->ofStatus('pending')->count();
+	}
+
+	public function passedCount()
+	{
+		return $this->model->ofStatus('passed')->count();
+	}
+
+	public function rejectedCount()
+	{
+		return $this->model->ofStatus('failed')->count();
 	}
 
 }

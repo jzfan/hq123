@@ -12,6 +12,10 @@
 */
 
 Route::get('/', function () {
+    return redirect('/wechat/index');
+});
+
+Route::get('/admin', function () {
     return view('frontend.welcome');
 });
 
@@ -34,15 +38,21 @@ Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'admin']], functio
 	Route::post('/{resource}/{id}/reject', 'LoanController@reject');
 });
 
+Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'editor']], function () {
+	Route::get('/agents/{id}/b4', 'AgentController@b4');
+	Route::get('/agents/{id}/ing', 'AgentController@ing');
+	Route::get('/agents/{id}/after', 'AgentController@after');
+	Route::post('/agents/{id}/b4', 'AgentController@submit');
+});
 
 Route::group(['namespace'=>'Wechat', 'prefix'=>'wechat', 'middleware'=>'wechat.oauth'], function () {
 	Route::any('/', 'WechatController@serve');
+	Route::get('/login', 'AuthController@loginForm');
 	Route::get('/register', 'AuthController@registerForm');
 	Route::post('/register', 'AuthController@register');
 	Route::get('/index', 'PageController@index');
 	Route::get('/plist', 'PageController@plist');
 
-	
 	Route::group(['middleware'=>'auth'], function () {
 		Route::get('/query-status', 'LoanController@queryStatusForm');
 		Route::post('/query-status', 'LoanController@queryStatus');
@@ -51,3 +61,5 @@ Route::group(['namespace'=>'Wechat', 'prefix'=>'wechat', 'middleware'=>'wechat.o
 		Route::post('/{resource}/apply', 'LoanController@apply');
 	});
 });
+
+

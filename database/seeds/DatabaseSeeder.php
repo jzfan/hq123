@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
         House::truncate();
 
         $users = factory(User::class, 22)->create();
-        User::first()->update(['phone'=>'13333333333']);
+        User::first()->update(['role'=>'admin', 'phone'=>13333333333]);
+        User::first()->update(['role'=>'editor', 'phone'=>14444444444]);
         
         foreach ($users as $user) {
             $car = factory(Car::class)->create(['user_id'=>$user->id]);

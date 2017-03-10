@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'status', 'phone', 'api_token', 'city', 'openid'
+        'name', 'email', 'password', 'status', 'phone', 'api_token', 'city', 'openid', 'role'
     ];
 
     /**
@@ -57,5 +57,15 @@ class User extends Authenticatable
     public function businesses()
     {
         return $this->hasMany(\Wx\Loan\Business::class);
+    }
+
+    public function isAdmin()
+    {
+        return \Auth::user()->role == 'admin';
+    }
+
+    public function isEditor()
+    {
+        return \Auth::user()->role == 'editor';
     }
 }
