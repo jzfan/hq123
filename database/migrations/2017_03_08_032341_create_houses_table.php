@@ -20,7 +20,8 @@ class CreateHousesTable extends Migration
             $table->smallInteger('duration');
             $table->timestamp('bought_at');
             $table->string('paid_by');
-            $table->string('assess');
+            $table->unsignedInteger('assess');
+            $table->string('mark')->default('');
             $table->enum('status', ['pending', 'passed', 'failed'])->default('pending');
             $table->timestamps();
         });

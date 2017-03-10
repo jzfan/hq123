@@ -10,18 +10,18 @@ class LoanController extends Controller
 {
 	use GetLoanRepoTrait;
 
-    public function queryStatusForm()
+    public function queryForm()
     {
-    	return view('wechat.query-status');
+    	return view('wechat.query.form');
     }
 
-    public function queryStatus(Request $request)
+    public function query(Request $request)
     {
     	$this->validate($request, [
     			'type' => 'required|in:cars,funds,houses,business'
     		]);
-    	$result = $this->getRepo($request->type)->queryStatus();
-    	return response()->json(['data'=>$result, 'code'=>200]);
+    	$result = $this->getRepo($request->type)->query();
+    	return view('wechat.query.result', compact('result'));
     }
 
     public function applyForm($resource)
@@ -31,12 +31,15 @@ class LoanController extends Controller
 
     public function apply(Request $request, $resource)
     {
-        // dd($request->all());
-        $this->validate($request, [
-                'loan' => 'required|numeric',
-                'duration' => 'required|integer'
-            ]);
-        $result = $this->getRepo($resource)->save($request->except(['_token']));
-        return response()->json(['data'=>'ok', 'code'=>201]);
+        $repo = $this->getRepo($resource);
+        $this->validate($request, $repo->rule());
+        $apply = $repo->save($request->except(['_token']));
+        if (! empty($request->allFiles())) {
+            $paths = $repo->upload($request->allFiles());
+            foreach ($paths as $path) {
+                $apply->files()->create(['path'=>$path]);
+            }
+        }
+        return view("wechat.apply.show", compact('apply'));
     }
 }

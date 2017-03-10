@@ -17,10 +17,16 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
+        if (! Auth::guard($guard)->check()) {
+            return $next($request);
+        }
+        $user = \Auth::user();
+        if ($user->role == 'editor') {
+            return redirect("/agents/{$user->id}/b4");
+        }
+        if ($user->role == 'admin') {
             return redirect('/dashboard');
         }
 
-        return $next($request);
     }
 }

@@ -20,7 +20,8 @@
 			<a class="mui-pull-right">退出</a>
 		</header>
 		<div class="mui-content">
-		<form action="/wechat/houses/apply" method="POST">
+		@includeWhen(count($errors) > 0, 'wechat.patials.errors')
+		<form action="/wechat/houses/apply" method="POST" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			<div class="mui-content-padded" style="margin: 5px;">
 				<div class="mui-msg">
@@ -108,7 +109,7 @@
 				                            <ul class="weui-uploader__files" id="uploaderFiles">
 				                            </ul>
 				                            <div class="weui-uploader__input-box">
-				                                <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple />
+				                                <input id="uploaderInput" class="weui-uploader__input" type="file" name='files' accept="image/*" multiple />
 				                            </div>
 				                        </div>
 				                    </div>

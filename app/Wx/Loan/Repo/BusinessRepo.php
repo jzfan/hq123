@@ -21,4 +21,14 @@ class BusinessRepo extends BaseRepo
 	    $this->model->create($merged);
 	    return redirect('/wechat/plist');
 	}
+
+	public function rule()
+	{
+		$this->rule['company'] = 'required|max:200';
+		$this->rule['house'] = 'required|max:200';
+		$this->rule['registered_at'] = 'required';
+		$this->rule['share'] = 'required|numeric|between:1,100';
+		$this->rule['annual_turnover'] = 'required|numeric';
+		return $this->rule;
+	}
 }

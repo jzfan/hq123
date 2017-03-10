@@ -14,11 +14,25 @@ class FundRepo extends BaseRepo
 	public function save($input)
 	{
 		$user = \Auth::user();
-		$user->real_name = $input['real_name'];
-		$user->save();
+		$user->update([
+				'real_name' => $input['real_name'],
+				'phone' => $input['phone'],
+				'city' => $input['city']
+			]);
 
-		$merged = array_merge($input, ['user_id' => \Auth::user()->id]);
-	    $this->model->create($merged);
-	    return redirect('/wechat/plist');
+		$merged = array_merge($input, ['user_id' => $user->id]);
+	    return $this->model->create($merged);
+	}
+
+
+	public function rule()
+	{
+		$this->rule['company'] = 'required|max:200';
+		$this->rule['city'] = 'required|max:20';
+		$this->rule['location'] = 'required';
+		$this->rule['insurance'] = 'required|max:20';
+		$this->rule['fund'] = 'required|max:20';
+		$this->rule['worked_at'] = 'required|date';
+		return $this->rule;
 	}
 }

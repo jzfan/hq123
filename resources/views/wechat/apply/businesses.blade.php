@@ -19,6 +19,7 @@
 			<a class="mui-pull-right">退出</a>
 		</header>
 		<div class="mui-content">
+		@includeWhen(count($errors) > 0, 'wechat.patials.errors')
 		<form action="/wechat/businesses/apply" method="POST">
 			{{ csrf_field() }}
 			<div class="mui-content-padded" style="margin: 5px;">

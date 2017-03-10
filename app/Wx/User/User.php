@@ -68,4 +68,9 @@ class User extends Authenticatable
     {
         return \Auth::user()->role == 'editor';
     }
+
+    public function clients()
+    {
+        return $this->hasMany(\Wx\Agent\Client::class, 'agent_id', 'id');
+    }
 }

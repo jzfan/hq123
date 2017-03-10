@@ -22,11 +22,6 @@ class LoanBase extends Model
     	return $this->morphMany(File::class, 'fileable');
     }
 
-    public function queryStatus()
-    {
-        return $this->select('id', 'status')->where('user_id', \Auth::user()->id)->first();
-    }
-
     public function getStatusAttribute($value)
     {
         switch ($value) {
@@ -39,5 +34,15 @@ class LoanBase extends Model
             default:
                 return '未知';
         }
+    }
+
+    public function scopeMy($q)
+    {
+        return $q->where('user_id', \Auth::user()->id);
+    }
+
+    public function scopeLast($q)
+    {
+        return $q->orderBy('id', 'desc')->first();
     }
 }

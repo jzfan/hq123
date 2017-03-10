@@ -23,6 +23,7 @@ class CreateBusinessesTable extends Migration
             $table->timestamp('registered_at');
             $table->tinyInteger('share');
             $table->integer('annual_turnover');
+            $table->string('mark')->default('');
             $table->enum('status', ['pending', 'passed', 'failed'])->default('pending');
             $table->timestamps();
         });

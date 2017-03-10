@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="row">
 @foreach($models as $model)
   <div class="col-md-4">
@@ -34,7 +33,7 @@
             <button class='btn btn-default bg-green btn-xs' onclick='pass({{ $model->id }}, this)'><span class="fa fa-check" aria-hidden="true"></span> 通过</button>
             <button class='btn btn-default bg-red btn-xs' onclick='reject({{ $model->id }}, this)'><span class="fa fa-close" aria-hidden="true"></span> 拒绝</button>
           </span></a></li>
-          <li><a href="#">备注 <span class="pull-right"></span></a></li>
+          <li><a href="#">备注 <span class="pull-right">{{ $model->mark }}</span></a></li>
         </ul>
       </div>
 
@@ -45,9 +44,9 @@
     <div class="box-footer text-center" style="display: block;">
       @foreach($model->files as $file)
           @if($loop->first)
-              <a href="{{ $file->path }}" data-lightbox="roadtrip{{ $model->id }}">查看图片</a>
+              <a href="/imagecache/large/{{ $file->path }}" data-lightbox="roadtrip{{ $model->id }}">查看图片</a>
           @endif
-              <a href="{{ $file->path }}" data-lightbox="roadtrip{{ $model->id }}"></a>
+              <a href="/imagecache/large/{{ $file->path }}" data-lightbox="roadtrip{{ $model->id }}"></a>
       @endforeach
     </div>
     <!-- /.box-footer -->

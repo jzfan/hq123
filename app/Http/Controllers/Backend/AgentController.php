@@ -3,10 +3,18 @@
 namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
+use Wx\Agent\Repo\ClientRepo;
 use App\Http\Controllers\Controller;
 
 class AgentController extends Controller
 {
+	protected $client;
+
+	public function __construct(ClientRepo $client)
+	{
+		$this->client = $client;
+	}
+
 	public function b4()
 	{
 		return view('backend.agents.b4')->with('status', 'Profile updated!');;
@@ -33,9 +41,9 @@ class AgentController extends Controller
 				'loan' => 'required|numeric',
 				'duration' => 'required|numeric'
 			]);
-
+dd($request->input());
 		$this->client->create($request->input());
 
-		return redirect()->back()->with('success', '操作成功!');
+		return redirect("/agents/{\Auth::user()->id}/ing")->with('success', '操作成功!');
 	}
 }

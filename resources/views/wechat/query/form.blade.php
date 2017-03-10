@@ -17,12 +17,12 @@
 		</header>
 		<div class="mui-content">
 			<div class="mui-content-padded" style="margin: 5px;">
-				<form class="mui-input-group" action='/wechat/query-status' method="POST">
+				<form class="mui-input-group" action='/wechat/query' method="POST">
 					{{ csrf_field() }}
 				    <br>
 				    <div class="mui-input-row">
 				        <label>类型</label>
-				        <input type="text" class="mui-input-clear" placeholder="请输入贷款类型">
+				        <input type="text" class="mui-input-clear" placeholder="请输入贷款类型" name='type'>
 				    </div>
 				    <br>
 					<div class="mui-content-padded">

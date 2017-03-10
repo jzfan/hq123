@@ -2,18 +2,25 @@
 
 namespace Wx\Loan\Repo;
 
+use Wx\File\File;
+
 abstract class BaseRepo
 {
+	protected $rule;
 	protected $model;
 
 	abstract function model();
-	
 	abstract public function save($input);
-
+	abstract public function rule();
 
 	public function __construct()
 	{
 		$this->model = $this->model();
+		$this->rule = [
+			'loan' => 'required|numeric',
+			'duration' => 'required|integer',
+			'mark' => 'max:255'
+		];
 	}
 
 	public function counts()
@@ -80,6 +87,26 @@ abstract class BaseRepo
 	public function rejectedCount()
 	{
 		return $this->model->ofStatus('failed')->count();
+	}
+
+	public function query()
+	{
+		return $this->model->my()->last();
+	}
+
+	public function myLast()
+	{
+		return $this->model->my()->last();
+	}
+
+	public function upload($files)
+	{
+		$paths = [];
+		foreach ($files as $file) {
+       		$path = $file->store('public/upload/applies');
+       		$paths[] = str_replace('public', '/storage', $path);
+		}
+		return $paths;
 	}
 
 }
