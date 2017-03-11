@@ -95,34 +95,26 @@
 		</header>
 		<div class="mui-content">
 				<div class="mui-msg">
-					乾源通商户登陆系统
+					乾源通用户登陆系统
 				</div>
-
-			<form id='login-form' class="mui-input-group">
+@includeWhen(count($errors) > 0, 'wechat.patials.errors')
+			<form id='login-form' class="mui-input-group" action='/login' method="POST">
+			{{ csrf_field() }}
 				<div class="mui-input-row">
 					<label>账号</label>
-					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号" name='phone'>
 				</div>
 				<div class="mui-input-row">
 					<label>密码</label>
-					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码" name='password'>
 				</div>
-			</form>
-			<form class="mui-input-group">
-				<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell">
-						记住密码
-						<div id="autoLogin" class="mui-switch">
-							<div class="mui-switch-handle"></div>
-						</div>
-					</li>
-				</ul>
-			</form>
+
 			<div class="mui-content-padded">
-				<button id='login' class="mui-btn mui-btn-block mui-btn-danger">登录</button>
-				<div class="link-area"><a id='reg' href="qdsq.html">渠道准入申请</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
+				<button id='login' class="mui-btn mui-btn-block mui-btn-danger" type="submit">登录</button>
+				<div class="link-area"><a id='reg' href="/wechat/register">马上注册</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
 				</div>
 			</div>
+			</form>
 			<div class="mui-content-padded oauth-area">
 
 			</div>

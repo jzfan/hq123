@@ -15,8 +15,7 @@ class EditorMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $user = \Auth::user();
-        if ($user->role === 'editor' && $user->id == $request->id) {
+        if (\Auth::user()->role === 'editor') {
             return $next($request);
         }
         return response()->json(['data'=>'auth failed', 'code'=>401]);

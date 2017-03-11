@@ -32,7 +32,7 @@ class LoginController extends Controller
 
     public function redirectTo()
     {
-        $uri=request()->path();
+        $uri=request()->header('referer');
         if (strpos($uri, 'wechat') !== false) {
             return '/wechat/plist';
         }

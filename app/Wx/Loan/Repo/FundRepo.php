@@ -16,7 +16,6 @@ class FundRepo extends BaseRepo
 		$user = \Auth::user();
 		$user->update([
 				'real_name' => $input['real_name'],
-				'phone' => $input['phone'],
 				'city' => $input['city']
 			]);
 

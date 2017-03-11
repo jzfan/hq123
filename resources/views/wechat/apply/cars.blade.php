@@ -78,7 +78,7 @@
 
 					<div class="mui-input-row">
 						<label>手机号码</label>
-						<input type="number" class="mui-input-clear mui-input" placeholder="请输入手机号码" name="phone">
+						<input type="number" class="mui-input-clear mui-input" placeholder="请输入手机号码" name="phone" value='{{ \Auth::user()->phone }}'>
 					</div>
 
 					<div class="mui-input-row">

@@ -71,7 +71,7 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          截至2017-3-9
+          截至{{ date('Y-m-d') }}
         </div>
         <!-- /.box-footer-->
       </div>

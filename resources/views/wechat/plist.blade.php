@@ -13,9 +13,10 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-pull-left">返回</a>
+			<a class="mui-pull-left" onclick="window.history.back()">返回</a>
 			<h1 class="mui-title">贷款产品</h1>
-			<a class="mui-pull-right">退出</a>
+@include('wechat.patials.logout')
+
 		</header>
 		
 		<div class="mui-content">

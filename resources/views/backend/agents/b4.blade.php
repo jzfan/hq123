@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
         <div class="col-md-12">
-<form action="/agents/{{ \Auth::user()->id }}/b4" method="POST">
+<form action="/client/b4" method="POST">
 {{ csrf_field() }}
           <div class="box box-danger">
             <div class="box-header">

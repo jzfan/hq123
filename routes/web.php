@@ -39,17 +39,16 @@ Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'admin']], functio
 });
 
 Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'editor']], function () {
-	Route::get('/agents/{id}/b4', 'AgentController@b4');
-	Route::get('/agents/{id}/ing', 'AgentController@ing');
-	Route::get('/agents/{id}/after', 'AgentController@after');
-	Route::post('/agents/{id}/b4', 'AgentController@submit');
+	Route::get('/client/b4', 'AgentController@b4');
+	Route::get('/client/ing', 'AgentController@ing');
+	Route::get('/client/after', 'AgentController@after');
+	Route::post('/client/b4', 'AgentController@submit');
 });
 
 Route::group(['namespace'=>'Wechat', 'prefix'=>'wechat', 'middleware'=>'wechat.oauth'], function () {
 	Route::any('/', 'WechatController@serve');
 	Route::get('/login', 'AuthController@loginForm')->middleware('guest');
 	Route::get('/register', 'AuthController@registerForm')->middleware('guest');
-	Route::post('/register', 'AuthController@register')->middleware('guest');
 	Route::get('/index', 'PageController@index');
 	Route::get('/plist', 'PageController@plist');
 

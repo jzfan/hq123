@@ -1,7 +1,7 @@
 <html><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
+  <title>乾源通管理后台</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -68,13 +68,7 @@
         <!-- /.col -->
       </div>
     </form>
-
-    <div class="social-auth-links text-center">
-      <p>- OR -</p>
-      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-qq"></i>  QQ 登录</a>
-      <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-wechat"></i>  WX 登录</a>
-    </div>
-    <!-- /.social-auth-links -->
+   
     <div class="row">
         <div class="col-xs-8">
             <a href="{{ route('password.request') }}">

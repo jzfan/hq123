@@ -13,7 +13,11 @@ class CarRepo extends BaseRepo
 
 	public function save($input)
 	{
-		$merged = array_merge($input, ['user_id' => \Auth::user()->id]);
+		$user = \Auth::user();
+		$user->real_name = $input['real_name'];
+		$user->save();
+
+		$merged = array_merge($input, ['user_id' => $user->id]);
 	    return $this->model->create($merged);
 	}
 

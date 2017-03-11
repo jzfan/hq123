@@ -7,6 +7,11 @@
 		<title>注册页面</title>
 		<link href="/wx/css/mui.min.css" rel="stylesheet" />
 		<link href="/wx/css/app.css" rel="stylesheet" />
+		<style>
+			.info{
+				color:#c8000a;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -15,9 +20,10 @@
 		</header>
 		<div class="mui-content">
 				<div class="mui-msg">
-					乾源通用户注册系统
+					<span class="info">乾源通用户注册系统</span><br><br>(申请贷款前请先注册哦！)
 				</div>
-			<form action="/wechat/register" method="POST">
+				@includeWhen(count($errors) > 0, 'wechat.patials.errors')
+			<form action="/register" method="POST">
 			{{ csrf_field() }}
 			<div id='login-form' class="mui-input-group" >
 				<div class="mui-input-row">
@@ -32,7 +38,7 @@
 
 			<div class="mui-content-padded">
 				<button id='login' class="mui-btn mui-btn-block mui-btn-danger" type='submit'>注册</button>
-				<div class="link-area"><a id='reg' href="login.html">已有账号？</a> <span class="spliter">|</span> <a id='forgetPassword'>在线客服</a>
+				<div class="link-area"><a id='reg' href="/wechat/login">已有账号？</a> <span class="spliter">|</span> <a id='forgetPassword'>在线客服</a>
 				</div>
 			</div>
 			</form>

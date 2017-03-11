@@ -17,7 +17,7 @@ class BusinessRepo extends BaseRepo
 		$user->real_name = $input['real_name'];
 		$user->save();
 
-		$merged = array_merge($input, ['user_id' => \Auth::user()->id]);
+		$merged = array_merge($input, ['user_id' => $user->id]);
 	    $this->model->create($merged);
 	    return redirect('/wechat/plist');
 	}
