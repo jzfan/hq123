@@ -15,29 +15,24 @@
 		</header>
 		<div class="mui-content">
 		<div class="mui-content-padded" style="margin: 5px;">
-				
+@if ($result === null)
+	<div style="text-align: center;margin: 2rem auto;">没有您的相关信息</div>
+@else			
 				<div class="mui-msg">
-					尊敬的客户,您贷款状态如下:
+					尊敬的客户{{ $result->phone }},您贷款状态如下:
 				</div>
-				<div style="display:none;">{{ dd($result->toArray()) }}</div>
 				<ul class="mui-table-view result">
-				    <li class="mui-table-view-cell"><span class="mui-icon mui-icon-checkmarkempty"></span>初审状态
-				        <span class="mui-badge mui-badge-success">通过</span>
-				    </li>
-				    <li class="mui-table-view-cell"><span class="mui-icon mui-icon-checkmarkempty"></span>真实性审核
-				        <span class="mui-badge mui-badge-success">通过</span>
-				    </li>
-				    <li class="mui-table-view-cell"><span class="mui-icon flag mui-icon-flag"></span>
-				    待审
-				        <span class="mui-badge  mui-badge-danger">请等待</span>
+				    <li class="mui-table-view-cell"><span class="mui-icon mui-icon-checkmarkempty"></span>审核状态
+				        <span class="mui-badge mui-badge-danger">{{ $result->status }}</span>
 				    </li>
 				</ul>
 
 				<div class="mui-content-padded">
-					<button id="login" type="submit" class="mui-btn mui-btn-block mui-btn-danger">等待放款中...</button>
+					<button id="login" type="submit" class="mui-btn mui-btn-block mui-btn-danger">{{ $result->status }}</button>
 				</div>
 			</div>
 		</div>
+@endif
 		<script src="js/mui.min.js"></script>
 		<script src="js/mui.enterfocus.js"></script>
 		<script src="js/app.js"></script>

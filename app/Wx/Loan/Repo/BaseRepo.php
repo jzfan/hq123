@@ -10,7 +10,6 @@ abstract class BaseRepo
 	protected $model;
 
 	abstract function model();
-	abstract public function save($input);
 	abstract public function rule();
 
 	public function __construct()
@@ -70,8 +69,7 @@ abstract class BaseRepo
 
 	public function apply($input)
 	{
-		$data = array_merge($input, ['user_id' => \Auth::user()->id]);
-		return $this->model->create($data);
+		return $this->model->create($input);
 	}
 
 	public function todayCount()
@@ -94,14 +92,9 @@ abstract class BaseRepo
 		return $this->model->ofStatus('failed')->count();
 	}
 
-	public function query()
+	public function query($phone)
 	{
-		return $this->model->my()->last();
-	}
-
-	public function myLast()
-	{
-		return $this->model->my()->last();
+		return $this->model->OfPhoneUser($phone)->orderBy('id', 'desc')->first();
 	}
 
 	public function upload($files)
@@ -112,6 +105,11 @@ abstract class BaseRepo
        		$paths[] = str_replace('public', '/storage', $path);
 		}
 		return $paths;
+	}
+
+	public function save($input)
+	{
+	    return $this->model->create($input);
 	}
 
 }

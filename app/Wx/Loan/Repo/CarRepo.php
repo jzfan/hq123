@@ -11,17 +11,6 @@ class CarRepo extends BaseRepo
 		return new Car;
 	}
 
-	public function save($input)
-	{
-		$user = \Auth::user();
-		$user->real_name = $input['real_name'];
-		$user->phone = $input['phone'];
-		$user->save();
-
-		$merged = array_merge($input, ['user_id' => $user->id]);
-	    return $this->model->create($merged);
-	}
-
 	public function rule()
 	{
 		$this->rule['brand'] = 'required|max:200';

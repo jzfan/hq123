@@ -11,18 +11,6 @@ class BusinessRepo extends BaseRepo
 		return new Business;
 	}
 
-	public function save($input)
-	{
-		$user = \Auth::user();
-		$user->real_name = $input['real_name'];
-		$user->phone = $input['phone'];
-		$user->save();
-
-		$merged = array_merge($input, ['user_id' => $user->id]);
-	    $this->model->create($merged);
-	    return redirect('/wechat/plist');
-	}
-
 	public function rule()
 	{
 		$this->rule['company'] = 'required|max:200';

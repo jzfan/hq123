@@ -15,7 +15,6 @@ class CreateBusinessesTable extends Migration
     {
         Schema::create('businesses', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
             $table->integer('loan');
             $table->smallInteger('duration');
             $table->string('company');

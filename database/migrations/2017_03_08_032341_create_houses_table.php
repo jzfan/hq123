@@ -15,7 +15,6 @@ class CreateHousesTable extends Migration
     {
         Schema::create('houses', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
             $table->integer('loan');
             $table->smallInteger('duration');
             $table->timestamp('bought_at');

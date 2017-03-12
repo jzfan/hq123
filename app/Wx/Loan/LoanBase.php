@@ -36,13 +36,8 @@ class LoanBase extends Model
         }
     }
 
-    public function scopeMy($q)
+    public function scopeOfPhoneUser($q, $phone)
     {
-        return $q->where('user_id', \Auth::user()->id);
-    }
-
-    public function scopeLast($q)
-    {
-        return $q->orderBy('id', 'desc')->first();
+        return $q->where('phone', $phone);
     }
 }

@@ -38,7 +38,7 @@ class LoginController extends Controller
         if (\Auth::user()->isEditor()) {
             return '/clients/b4';
         }
-        return redirect('/');
+        return '/wechat/index';
 
     }
 }

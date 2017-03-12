@@ -50,8 +50,6 @@ Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'editor']], functi
 
 Route::group(['namespace'=>'Wechat', 'prefix'=>'wechat', 'middleware'=>'wechat.oauth'], function () {
 	Route::any('/', 'WechatController@serve');
-	// Route::get('/login', 'AuthController@loginForm')->middleware('guest');
-	// Route::get('/register', 'AuthController@registerForm')->middleware('guest');
 	Route::get('/index', 'PageController@index');
 	Route::get('/plist', 'PageController@plist');
 

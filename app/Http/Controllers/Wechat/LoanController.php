@@ -18,9 +18,13 @@ class LoanController extends Controller
     public function query(Request $request)
     {
     	$this->validate($request, [
-    			'type' => 'required|in:' . \Auth::user()->appliedRule()
+    			'type' => 'required',
+                'phone'=> [
+                        'required',
+                        'regex:/^1[34578][0-9]{9}$/'
+                    ]
     		]);
-    	$result = $this->getRepo($request->type)->query();
+    	$result = $this->getRepo($request->type)->query($request->phone);
     	return view('wechat.query.result', compact('result'));
     }
 

@@ -9,7 +9,7 @@
     <!-- Widget: user widget style 1 -->
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h5>姓名：&nbsp;<span class="">{{ $model->user->real_name }}</span>&nbsp;<small class="label bg-red">{{ $model->status }}</small> </h5>
+        <h5>姓名：&nbsp;<span class="">{{ $model->real_name or ''}}</span>&nbsp;<small class="label bg-red">{{ $model->status }}</small> </h5>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
           </button>
@@ -23,7 +23,7 @@
 
       <div class="box-footer no-padding">
         <ul class="nav nav-stacked">
-          <li><a href="#">手机 <span class="pull-right">{{ $model->user->phone }}</span></a></li>
+          <li><a href="#">手机 <span class="pull-right">{{ $model->phone }}</span></a></li>
           <li><a href="#">贷款额度 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ number_format($model->loan) }}元</span></a></li>
           <li><a href="#">单位 <span class="pull-right">{{ $model->company }}</span></a></li>
           <li><a href="#">入职时间 <span class="pull-right">{{ $model->worked_at }}</span></a></li>

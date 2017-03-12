@@ -11,19 +11,6 @@ class HouseRepo extends BaseRepo
 		return new House;
 	}
 
-	public function save($input)
-	{
-		$user = \Auth::user();
-		$user->update([
-				'real_name' => $input['real_name'],
-				'city' => $input['city'],
-				'phone' => $input['phone']
-			]);
-
-		$merged = array_merge($input, ['user_id' => $user->id]);
-	    return $this->model->create($merged);
-	}
-
 	public function rule()
 	{
 		$this->rule['bought_at'] = 'required|date';
