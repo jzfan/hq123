@@ -29,6 +29,9 @@ Route::group(['namespace'=>'Frontend'], function () {
 
 Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'admin']], function () {
 	Route::get('/dashboard', 'DashboardController@index');
+	Route::get('/agents', 'AgentController@index');
+	Route::post('/agents', 'AgentController@create');
+	Route::delete('/agents/{id}', 'AgentController@destroy');
 
 	Route::get('/{resource}/failed', 'LoanController@failed');
 	Route::get('/{resource}/pending', 'LoanController@pending');
@@ -39,27 +42,26 @@ Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'admin']], functio
 });
 
 Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'editor']], function () {
-	Route::get('/clients/b4', 'AgentController@b4');
-	Route::get('/clients/ing', 'AgentController@ing');
-	Route::get('/clients/after', 'AgentController@after');
-	Route::post('/clients/b4', 'AgentController@submit');
+	Route::get('/clients/b4', 'ClientController@b4');
+	Route::get('/clients/ing', 'ClientController@ing');
+	Route::get('/clients/after', 'ClientController@after');
+	Route::post('/clients/b4', 'ClientController@submit');
 });
 
 Route::group(['namespace'=>'Wechat', 'prefix'=>'wechat', 'middleware'=>'wechat.oauth'], function () {
 	Route::any('/', 'WechatController@serve');
-	Route::get('/login', 'AuthController@loginForm')->middleware('guest');
-	Route::get('/register', 'AuthController@registerForm')->middleware('guest');
+	// Route::get('/login', 'AuthController@loginForm')->middleware('guest');
+	// Route::get('/register', 'AuthController@registerForm')->middleware('guest');
 	Route::get('/index', 'PageController@index');
 	Route::get('/plist', 'PageController@plist');
 
-	Route::group(['middleware'=>'auth'], function () {
-		Route::get('/query', 'LoanController@queryForm');
-		Route::post('/query', 'LoanController@query');
-		Route::get('/query/{resource}', 'LoanController@queryResult');
-		
-		Route::get('/{resource}/apply', 'LoanController@applyForm');
-		Route::post('/{resource}/apply', 'LoanController@apply');
-	});
+	Route::get('/{resource}/apply', 'LoanController@applyForm');
+	Route::post('/{resource}/apply', 'LoanController@apply');
+
+	Route::get('/query', 'LoanController@queryForm');
+	Route::post('/query', 'LoanController@query');
+	Route::get('/query/{resource}', 'LoanController@queryResult');
+
 });
 
 

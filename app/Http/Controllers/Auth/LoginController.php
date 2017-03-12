@@ -32,15 +32,11 @@ class LoginController extends Controller
 
     public function redirectTo()
     {
-        $uri=request()->header('referer');
-        if (strpos($uri, 'wechat') !== false) {
-            return '/wechat/plist';
-        }
         if (\Auth::user()->isAdmin()) {
             return '/dashboard';
         }
         if (\Auth::user()->isEditor()) {
-            return '/agents/'.\Auth::user()->id.'/b4';
+            return '/clients/b4';
         }
         return redirect('/');
 

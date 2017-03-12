@@ -1,4 +1,5 @@
        <li><a href="/dashboard"><i class="fa fa-dashboard"></i> <span>控制台</span></a></li>
+       <li><a href="/agents"><i class="fa fa-user"></i> <span>代理</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-car"></i> <span>汽车抵押贷款</span>

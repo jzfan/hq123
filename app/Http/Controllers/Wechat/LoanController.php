@@ -34,6 +34,7 @@ class LoanController extends Controller
         $repo = $this->getRepo($resource);
         $this->validate($request, $repo->rule());
         $apply = $repo->save($request->except(['_token']));
+        
         if (! empty($request->allFiles())) {
             $paths = $repo->upload($request->allFiles());
             foreach ($paths as $path) {

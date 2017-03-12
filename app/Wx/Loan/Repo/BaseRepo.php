@@ -17,6 +17,11 @@ abstract class BaseRepo
 	{
 		$this->model = $this->model();
 		$this->rule = [
+			'phone'=> [
+			        'required',
+			        'regex:/^1[34578][0-9]{9}$/',
+			        'unique:users'
+			    ],
 			'loan' => 'required|numeric',
 			'duration' => 'required|integer',
 			'mark' => 'max:255'

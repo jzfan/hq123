@@ -16,7 +16,8 @@ class HouseRepo extends BaseRepo
 		$user = \Auth::user();
 		$user->update([
 				'real_name' => $input['real_name'],
-				'city' => $input['city']
+				'city' => $input['city'],
+				'phone' => $input['phone']
 			]);
 
 		$merged = array_merge($input, ['user_id' => $user->id]);

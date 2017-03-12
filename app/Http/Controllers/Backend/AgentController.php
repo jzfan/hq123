@@ -2,48 +2,46 @@
 
 namespace App\Http\Controllers\Backend;
 
+use Wx\User\Repo\AgentRepo;
 use Illuminate\Http\Request;
-use Wx\Agent\Repo\ClientRepo;
 use App\Http\Controllers\Controller;
 
 class AgentController extends Controller
 {
-	protected $client;
+	private $agent;
 
-	public function __construct(ClientRepo $client)
+	public function __construct(AgentRepo $agent)
 	{
-		$this->client = $client;
+		$this->agent = $agent;
 	}
 
-	public function b4()
-	{
-		return view('backend.agents.b4')->with('status', 'Profile updated!');;
-	}
+    public function index()
+    {
+        $agents = $this->agent->all();
+        return view('backend.agents.index', compact('agents'));
+    }
 
-	public function ing()
-	{
-		return view('backend.agents.ing');
-	}
+    public function destroy($id)
+    {
+        if ($this->agent->delete($id) === true) {
+        	return redirect()->back()->with('success', '取消成功！');
+        }
+        return redirect()->back()->withErrors('操作失败！');
+    }
 
-	public function after()
-	{
-		return view('backend.agents.after');
-	}
-
-	public function submit(Request $request)
-	{
-		$this->validate($request, [
-				'name' => 'required|max:20',
-				'phone'=> [
-					'required',
-					'regex:/^1[34578][0-9]{9}$/'
-						],
-				'loan' => 'required|numeric',
-				'duration' => 'required|numeric'
-			]);
-dd($request->input());
-		$this->client->create($request->input());
-
-		return redirect("/agents/{\Auth::user()->id}/ing")->with('success', '操作成功!');
-	}
+    public function create(Request $request)
+    {
+        $this->validate($request, [
+            'phone'=> [
+                    'required',
+                    'regex:/^1[34578][0-9]{9}$/',
+                    'exists:users'
+                ]
+            ]);
+        if ($this->agent->addBy($request->phone)) {
+            return redirect()->back()->with('success', '添加成功！');
+        }
+        return redirect()->back()->withErrors('添加失败！');
+        
+    }
 }

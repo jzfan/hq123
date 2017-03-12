@@ -15,6 +15,7 @@ class CarRepo extends BaseRepo
 	{
 		$user = \Auth::user();
 		$user->real_name = $input['real_name'];
+		$user->phone = $input['phone'];
 		$user->save();
 
 		$merged = array_merge($input, ['user_id' => $user->id]);

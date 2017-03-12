@@ -42,7 +42,6 @@ $factory->define(Wx\Loan\Car::class, function (Faker\Generator $faker) {
     return [
         'brand' => $faker->company,
         'plate_number' => $faker->ean8,
-        'location' => $faker->city,
         'bought_at' => $faker->dateTime(),
         'paid_by' => $faker->creditCardType,
         'duration' => mt_rand(1, 22),

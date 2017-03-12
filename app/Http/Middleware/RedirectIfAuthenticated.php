@@ -22,7 +22,7 @@ class RedirectIfAuthenticated
         }
         $user = \Auth::user();
         if ($user->role == 'editor') {
-            return redirect("/agents/{$user->id}/b4");
+            return redirect("/clients/b4");
         }
         if ($user->role == 'admin') {
             return redirect('/dashboard');

@@ -25,7 +25,7 @@
 			<div id="login-form" class="mui-input-group">
 				<div class="mui-input-row">
 					<label>手机号</label>
-					<input id="account" type="text" class="mui-input-clear mui-input" placeholder="请输入手机号" data-input-clear="1" value='{{ \Auth::user()->phone }}'><span class="mui-icon mui-icon-clear mui-hidden"></span>
+					<input id="account" type="text" class="mui-input-clear mui-input" placeholder="请输入手机号" data-input-clear="1"><span class="mui-icon mui-icon-clear mui-hidden"></span>
 				</div>
 				<div class="mui-input-row">
 					<label>贷款类型</label>
