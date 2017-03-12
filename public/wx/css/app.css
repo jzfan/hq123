@@ -234,6 +234,8 @@
 	border-bottom: 8px solid #efeff4;
 }
 .plist-l{
+	flex: 2;
+	-webkit-flex: 2;
 	flex:2;
 	position: relative;
 }
@@ -242,7 +244,8 @@
 	height: 100%;
 }
 .plist-r{
-	flex:3;
+	flex: 3;
+	-webkit-flex: 3;
 	margin-left: 0.5rem;
 }
 
@@ -258,9 +261,11 @@
 	color:#000;
 }
 .plist-r p .mui-icon{
-	color:#c8000a;
-	margin-right:0.5rem;
-	font-size: 20px;
+	color:#4cd964;
+	font-size: 17px;
+	margin-right: 4px;
+	border-radius: 50%;
+	border:1px solid #4cd964;
 }
 .pname{
 	width: 100%;

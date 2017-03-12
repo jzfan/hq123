@@ -111,10 +111,11 @@
 
 			<div class="mui-content-padded">
 				<button id='login' class="mui-btn mui-btn-block mui-btn-danger" type="submit">登录</button>
-				<div class="link-area"><a id='reg' href="/wechat/register">马上注册</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
-				</div>
 			</div>
 			</form>
+			
+			<div class="link-area"><a id='reg' href="/wechat/register">马上注册</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
+				</div>
 			<div class="mui-content-padded oauth-area">
 
 			</div>

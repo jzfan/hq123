@@ -28,8 +28,8 @@
           <li><a href="#">单位 <span class="pull-right">{{ $model->company }}</span></a></li>
           <li><a href="#">入职时间 <span class="pull-right">{{ $model->worked_at }}</span></a></li>
           <li><a href="#">期限<span class="pull-right">{{ $model->duration }}(月) </span></a></li>
-          <li><a href="#">社保 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ number_format($model->insurance) }}元</span></a></li>
-          <li><a href="#">公积金 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ number_format($model->fund) }}元</span></a></li>
+          <li><a href="#">社保 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ $model->insurance }}元</span></a></li>
+          <li><a href="#">公积金 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ $model->fund }}元</span></a></li>
           <li><a href="###">审批操作 <span class="pull-right">
             <button class='btn btn-default bg-blue btn-xs' onclick='unpass({{ $model->id }}, this)'><span class="fa fa-reply" aria-hidden="true"></span> 待审</button>
             <button class='btn btn-default bg-red btn-xs' onclick='reject({{ $model->id }}, this)'><span class="fa fa-close" aria-hidden="true"></span> 拒绝</button>

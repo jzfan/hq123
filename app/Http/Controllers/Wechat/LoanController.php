@@ -18,7 +18,7 @@ class LoanController extends Controller
     public function query(Request $request)
     {
     	$this->validate($request, [
-    			'type' => 'required|in:cars,funds,houses,business'
+    			'type' => 'required|in:' . \Auth::user()->appliedRule()
     		]);
     	$result = $this->getRepo($request->type)->query();
     	return view('wechat.query.result', compact('result'));

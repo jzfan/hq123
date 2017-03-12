@@ -59,6 +59,11 @@ class User extends Authenticatable
         return $this->hasMany(\Wx\Loan\Business::class);
     }
 
+    public function clients()
+    {
+        return $this->hasMany(\Wx\Agent\Client::class, 'agent_id', 'id');
+    }
+
     public function isAdmin()
     {
         return \Auth::user()->role == 'admin';
@@ -69,8 +74,21 @@ class User extends Authenticatable
         return \Auth::user()->role == 'editor';
     }
 
-    public function clients()
+    public function applied()
     {
-        return $this->hasMany(\Wx\Agent\Client::class, 'agent_id', 'id');
+        $user = \Auth::user();
+        return [
+            'cars' => $user->cars()->count(),
+            'houses' => $user->houses()->count(),
+            'funds' => $user->fund()->count(),
+            'businesses' => $user->businesses()->count(),
+        ];
+    }
+
+    public function appliedRule()
+    {
+        $arr = array_filter($this->applied());
+        $keys = array_keys($arr);
+        return join(',', $keys);
     }
 }

@@ -39,10 +39,10 @@ Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'admin']], functio
 });
 
 Route::group(['namespace'=>'Backend', 'middleware'=> ['auth', 'editor']], function () {
-	Route::get('/client/b4', 'AgentController@b4');
-	Route::get('/client/ing', 'AgentController@ing');
-	Route::get('/client/after', 'AgentController@after');
-	Route::post('/client/b4', 'AgentController@submit');
+	Route::get('/clients/b4', 'AgentController@b4');
+	Route::get('/clients/ing', 'AgentController@ing');
+	Route::get('/clients/after', 'AgentController@after');
+	Route::post('/clients/b4', 'AgentController@submit');
 });
 
 Route::group(['namespace'=>'Wechat', 'prefix'=>'wechat', 'middleware'=>'wechat.oauth'], function () {
