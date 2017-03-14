@@ -15,14 +15,11 @@ class CreateBusinessesTable extends Migration
     {
         Schema::create('businesses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('loan');
-            $table->smallInteger('duration');
             $table->string('company');
             $table->string('house');
             $table->timestamp('registered_at');
-            $table->tinyInteger('share');
+            $table->string('share');
             $table->integer('annual_turnover');
-            $table->string('mark')->default('');
             $table->enum('status', ['pending', 'passed', 'failed'])->default('pending');
             $table->timestamps();
         });

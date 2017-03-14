@@ -35,6 +35,7 @@ class LoanController extends Controller
 
     public function apply(Request $request, $resource)
     {
+dd($request->allFiles());
         $repo = $this->getRepo($resource);
         $this->validate($request, $repo->rule());
         $apply = $repo->save($request->except(['_token']));

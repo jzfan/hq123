@@ -16,7 +16,7 @@ class BusinessRepo extends BaseRepo
 		$this->rule['company'] = 'required|max:200';
 		$this->rule['house'] = 'required|max:200';
 		$this->rule['registered_at'] = 'required';
-		$this->rule['share'] = 'required|numeric|between:1,100';
+		$this->rule['share'] = 'required';
 		$this->rule['annual_turnover'] = 'required|numeric';
 		return $this->rule;
 	}

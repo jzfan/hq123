@@ -15,12 +15,9 @@ class CreateHousesTable extends Migration
     {
         Schema::create('houses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('loan');
-            $table->smallInteger('duration');
             $table->timestamp('bought_at');
             $table->string('paid_by');
             $table->unsignedInteger('assess');
-            $table->string('mark')->default('');
             $table->enum('status', ['pending', 'passed', 'failed'])->default('pending');
             $table->timestamps();
         });

@@ -18,10 +18,9 @@ abstract class BaseRepo
 		$this->rule = [
 			'phone'=> [
 			        'required',
-			        'regex:/^1[34578][0-9]{9}$/',
-			        'unique:users'
+			        'regex:/^1[34578][0-9]{9}$/'
 			    ],
-			'loan' => 'required|numeric',
+			'amount' => 'required|numeric',
 			'duration' => 'required|integer',
 			'mark' => 'max:255'
 		];
@@ -39,32 +38,38 @@ abstract class BaseRepo
 
 	public function failed($n)
 	{
-		return $this->model->ofStatus('failed')->paginate($n);
+		return $this->model->ofStatus('failed')->orderBy('id', 'desc')->paginate($n);
 	}
 
 	public function passed($n)
 	{
-		return $this->model->ofStatus('passed')->paginate($n);
+		return $this->model->ofStatus('passed')->orderBy('id', 'desc')->paginate($n);
 	}
 
 	public function pending($n)
 	{
-		return $this->model->ofStatus('pending')->paginate($n);
+		return $this->model->ofStatus('pending')->orderBy('id', 'desc')->paginate($n);
 	}
 
 	public function pass($id)
 	{
-		return $this->model->findOrFail($id)->update(['status'=>'passed']);
+		$model = $this->model->findOrFail($id);
+		$model->loan()->update(['mark'=>request()->mark]);
+		return $model->update(['status'=>'passed']);
 	}
 
 	public function unpass($id)
 	{
-		return $this->model->findOrFail($id)->update(['status'=>'pending']);
+		$model = $this->model->findOrFail($id);
+		$model->loan()->update(['mark'=>request()->mark]);
+		return $model->update(['status'=>'pending']);
 	}
 
 	public function reject($id)
 	{
-		return $this->model->findOrFail($id)->update(['status'=>'failed']);
+		$model = $this->model->findOrFail($id);
+		$model->loan()->update(['mark'=>request()->mark]);
+		return $model->update(['status'=>'failed']);
 	}
 
 	public function apply($input)
@@ -94,13 +99,15 @@ abstract class BaseRepo
 
 	public function query($phone)
 	{
-		return $this->model->OfPhoneUser($phone)->orderBy('id', 'desc')->first();
+		return $this->model->whereHas('loan', function ($q) use ($phone) {
+			$q->wherePhone($phone);
+		})->orderBy('id', 'desc')->first();
 	}
 
 	public function upload($files)
 	{
 		$paths = [];
-		foreach ($files as $file) {
+		foreach ($files['files'] as $file) {
        		$path = $file->store('public/upload/applies');
        		$paths[] = str_replace('public', '/storage', $path);
 		}
@@ -109,7 +116,9 @@ abstract class BaseRepo
 
 	public function save($input)
 	{
-	    return $this->model->create($input);
+	    $model = $this->model->create($input);
+		$model->loan()->create($input);
+		return $model;
 	}
 
 }

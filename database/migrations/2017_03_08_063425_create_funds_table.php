@@ -15,14 +15,11 @@ class CreateFundsTable extends Migration
     {
         Schema::create('funds', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('loan');
-            $table->smallInteger('duration');
             $table->string('company');
             $table->string('location');
             $table->string('insurance');
             $table->string('fund');
             $table->timestamp('worked_at');
-            $table->string('mark')->default('');
             $table->enum('status', ['pending', 'passed', 'failed'])->default('pending');
             $table->timestamps();
         });

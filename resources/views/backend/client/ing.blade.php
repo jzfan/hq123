@@ -31,7 +31,7 @@
                 <button type="button" class="btn btn-default bg-blue btn-xs"><i class="fa fa-star"></i>已签约</button>
                 <button type="button" class="btn btn-default bg-red btn-xs"><i class="fa  fa-close "></i>拒绝</button>
                 </span></a></li>
-                <li><a href="#">备注 <span class="pull-right"></span></a></li>
+                <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
               </ul>
             </div>
 
@@ -80,7 +80,7 @@
                 <button type="button" class="btn btn-default bg-blue btn-xs"><i class="fa fa-star"></i>已签约</button>
                 <button type="button" class="btn btn-default bg-red btn-xs"><i class="fa  fa-close "></i>拒绝</button>
                 </span></a></li>
-                <li><a href="#">备注 <span class="pull-right"></span></a></li>
+                <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
               </ul>
             </div>
 
@@ -128,7 +128,7 @@
                 <button type="button" class="btn btn-default bg-blue btn-xs"><i class="fa fa-star"></i>已签约</button>
                 <button type="button" class="btn btn-default bg-yellow btn-xs"><i class="fa  fa-close "></i>待签约</button>
                 </span></a></li>
-                <li><a href="#">备注 <span class="pull-right"></span></a></li>
+                <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
               </ul>
             </div>
 
@@ -176,7 +176,7 @@
                 <button type="button" class="btn btn-default bg-yellow btn-xs"><i class="fa fa-star"></i>待签约</button>
                 <button type="button" class="btn btn-default bg-red btn-xs"><i class="fa  fa-close "></i>拒绝</button>
                 </span></a></li>
-                <li><a href="#">备注 <span class="pull-right"></span></a></li>
+                <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
               </ul>
             </div>
 

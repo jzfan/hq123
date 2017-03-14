@@ -3,6 +3,7 @@
 use Wx\Loan\Car;
 use Wx\File\File;
 use Wx\Loan\Fund;
+use Wx\Loan\Loan;
 use Wx\User\User;
 use Wx\Loan\Apply;
 use Wx\Loan\House;
@@ -28,8 +29,9 @@ class DatabaseSeeder extends Seeder
         User::first()->update(['role'=>'admin', 'phone'=>13333333333]);
         User::orderBy('id')->skip(1)->first()->update(['role'=>'editor', 'phone'=>14444444444]);
         
-        foreach ($users as $user) {
-            $car = factory(Car::class)->create(['user_id'=>$user->id]);
+        foreach (range(1, 3) as $index) {
+            $car = factory(Car::class)->create();
+            $car->loan()->save(factory(Loan::class)->make());
             foreach (range(0, mt_rand(1,2)) as $index) {
                 factory(File::class)->create([
                     'fileable_id'=>$car->id, 
@@ -37,7 +39,8 @@ class DatabaseSeeder extends Seeder
                 ]);
             }
 
-            $house = factory(House::class)->create(['user_id'=>$user->id]);
+            $house = factory(House::class)->create();
+            $house->loan()->save(factory(Loan::class)->make());
             foreach (range(0, mt_rand(1,2)) as $index) {
                 factory(File::class)->create([
                     'fileable_id'=>$house->id, 
@@ -45,7 +48,8 @@ class DatabaseSeeder extends Seeder
                 ]);
             }
 
-            $fund = factory(Fund::class)->create(['user_id'=>$user->id]);
+            $fund = factory(Fund::class)->create();
+            $fund->loan()->save(factory(Loan::class)->make());
             foreach (range(0, mt_rand(1,2)) as $index) {
                 factory(File::class)->create([
                     'fileable_id'=>$fund->id, 
@@ -53,10 +57,11 @@ class DatabaseSeeder extends Seeder
                 ]);
             }
 
-            $fund = factory(Business::class)->create(['user_id'=>$user->id]);
+            $Business = factory(Business::class)->create();
+            $Business->loan()->save(factory(Loan::class)->make());
             foreach (range(0, mt_rand(1,2)) as $index) {
                 factory(File::class)->create([
-                    'fileable_id'=>$fund->id, 
+                    'fileable_id'=>$Business->id, 
                     'fileable_type'=>'Wx\Loan\Business'
                 ]);
             }

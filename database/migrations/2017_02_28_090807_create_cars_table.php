@@ -15,13 +15,10 @@ class CreateCarsTable extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('loan');
-            $table->smallInteger('duration');
             $table->string('brand');
             $table->string('plate_number');
             $table->timestamp('bought_at');
             $table->string('paid_by');
-            $table->string('mark')->default('');
             $table->enum('status', ['pending', 'passed', 'failed'])->default('pending');
             $table->timestamps();
         });

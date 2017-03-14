@@ -9,7 +9,7 @@
     <!-- Widget: user widget style 1 -->
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h5>姓名：&nbsp;<span class="">{{ $model->real_name or ''}}</span>&nbsp;<small class="label bg-red">{{ $model->status }}</small> </h5>
+        <h5>姓名：&nbsp;<span class="">{{ $model->loan->name }}</span>&nbsp;<small class="label bg-red">{{ $model->status }}</small> </h5>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
           </button>
@@ -23,8 +23,8 @@
 
       <div class="box-footer no-padding">
         <ul class="nav nav-stacked">
-          <li><a href="#">手机 <span class="pull-right">{{ $model->phone }}</span></a></li>
-          <li><a href="#">贷款额度 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ $model->loan }}</span></a></li>
+          <li><a href="#">手机 <span class="pull-right">{{ $model->loan->phone }}</span></a></li>
+          <li><a href="#">贷款额度 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ $model->loan->amount }}</span></a></li>
           <li><a href="#">购买于 <span class="pull-right">{{ $model->bought_at->format('Y-m-d') }}</span></a></li>
           <li><a href="#">购买方式<span class="pull-right">{{ $model->paid_by }} </span></a></li>
           <li><a href="#">估价 <span class="pull-right">{{ $model->assess }}</span></a></li>
@@ -32,7 +32,7 @@
             <button class='btn btn-default bg-green btn-xs' onclick='pass({{ $model->id }}, this)'><span class="fa fa-check" aria-hidden="true"></span> 通过</button>
             <button class='btn btn-default bg-blue btn-xs' onclick='unpass({{ $model->id }}, this)'><span class="fa fa-reply" aria-hidden="true"></span> 待审</button>
           </span></a></li>
-          <li><a href="#">备注 <span class="pull-right"></span></a></li>
+          <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
         </ul>
       </div>
 

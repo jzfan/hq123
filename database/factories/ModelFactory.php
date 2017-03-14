@@ -16,7 +16,6 @@ $factory->define(Wx\User\User::class, function (Faker\Generator $faker) {
     static $password;
     return [
         'name' => $faker->name,
-        'real_name' => $faker->name,
         'city' => $faker->city,
         'email' => $faker->unique()->safeEmail,
         'phone' => (string) mt_rand(13000000000, 18999999999),
@@ -44,8 +43,6 @@ $factory->define(Wx\Loan\Car::class, function (Faker\Generator $faker) {
         'plate_number' => $faker->ean8,
         'bought_at' => $faker->dateTime(),
         'paid_by' => $faker->creditCardType,
-        'duration' => mt_rand(1, 22),
-        'loan' => mt_rand(1, 100) * 10000,
         'status' => (string)mt_rand(1, 3),
     ];
 });
@@ -55,8 +52,6 @@ $factory->define(Wx\Loan\House::class, function (Faker\Generator $faker) {
         'bought_at' => $faker->dateTime(),
         'paid_by' => $faker->creditCardType,
         'assess' => mt_rand(1, 100) * 10000,
-        'duration' => mt_rand(1, 22),
-        'loan' => mt_rand(1, 100) * 10000,
         'status' => (string)mt_rand(1, 3),
     ];
 });
@@ -68,8 +63,6 @@ $factory->define(Wx\Loan\Fund::class, function (Faker\Generator $faker) {
         'worked_at' => $faker->dateTime(),
         'insurance' => mt_rand(10000, 999999),
         'fund' => mt_rand(10000, 999999),
-        'duration' => mt_rand(1, 22),
-        'loan' => mt_rand(1, 100) * 10000,
         'status' => (string)mt_rand(1, 3),
     ];
 });
@@ -79,10 +72,19 @@ $factory->define(Wx\Loan\Business::class, function (Faker\Generator $faker) {
         'company' => $faker->company,
         'house' => $faker->address,
         'registered_at' => $faker->dateTime(),
-        'share' => mt_rand(1, 100),
+        'share' => mt_rand(1, 100).'%',
         'annual_turnover' => mt_rand(1, 100) * 10000,
-        'loan' => mt_rand(1, 100) * 10000,
-        'duration' => mt_rand(1, 44),
         'status' => (string)mt_rand(1, 3),
+    ];
+});
+
+$factory->define(Wx\Loan\Loan::class, function (Faker\Generator $faker) {
+    return [
+        'amount' => mt_rand(1, 100) * 10000,
+        'duration' => mt_rand(10, 100),
+        'city' => $faker->city,
+        'name' => $faker->name,
+        'phone' => (string) mt_rand(13000000000, 18999999999),
+        'mark' => $faker->sentence,
     ];
 });

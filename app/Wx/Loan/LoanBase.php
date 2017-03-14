@@ -7,19 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class LoanBase extends Model
 {
-    public function user()
+    public function loan()
     {
-    	return $this->belongsTo(\Wx\User\User::class);
+        return $this->morphOne(\Wx\Loan\Loan::class, 'loanable');
+    }
+
+    public function files()
+    {
+        return $this->morphMany(File::class, 'fileable');
     }
 
     public function ScopeOfStatus($query, $status)
     {
     	return $query->whereStatus($status);
-    }
-
-    public function files()
-    {
-    	return $this->morphMany(File::class, 'fileable');
     }
 
     public function getStatusAttribute($value)
@@ -36,8 +36,8 @@ class LoanBase extends Model
         }
     }
 
-    public function scopeOfPhoneUser($q, $phone)
-    {
-        return $q->where('phone', $phone);
-    }
+    // public function scopeOfPhoneUser($q, $phone)
+    // {
+    //     return $q->where('phone', $phone);
+    // }
 }

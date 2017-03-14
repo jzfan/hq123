@@ -26,7 +26,7 @@
 				        <span class="mui-badge mui-badge-danger">{{ $result->status }}</span>
 				    </li>
 				</ul>
-
+<p>{{ $result->loan->mark }}</p>
 				<div class="mui-content-padded">
 					<button id="login" type="submit" class="mui-btn mui-btn-block mui-btn-danger">{{ $result->status }}</button>
 				</div>

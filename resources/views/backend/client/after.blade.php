@@ -30,7 +30,7 @@
                 <button type="button" class="btn btn-default bg-green btn-xs"><i class="fa fa-check"></i>正常</button>
                 <button type="button" class="btn btn-default bg-red btn-xs"><i class="fa  fa-close "></i>逾期</button>
                 </span></a></li>
-                <li><a href="#">备注 <span class="pull-right"></span></a></li>
+                <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
               </ul>
             </div>
 
@@ -75,7 +75,7 @@
                 <button type="button" class="btn btn-default bg-green btn-xs"><i class="fa fa-check"></i>正常</button>
                 <button type="button" class="btn btn-default bg-red btn-xs"><i class="fa  fa-close "></i>逾期</button>
                 </span></a></li>
-                <li><a href="#">备注 <span class="pull-right"></span></a></li>
+                <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
               </ul>
             </div>
 
@@ -120,7 +120,7 @@
                 <button type="button" class="btn btn-default bg-green btn-xs"><i class="fa fa-check"></i>正常</button>
                 <button type="button" class="btn btn-default bg-red btn-xs"><i class="fa  fa-close "></i>逾期</button>
                 </span></a></li>
-                <li><a href="#">备注 <span class="pull-right"></span></a></li>
+                <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
               </ul>
             </div>
 
@@ -164,7 +164,7 @@
                 <button type="button" class="btn btn-default bg-green btn-xs"><i class="fa fa-check"></i>正常</button>
                 <button type="button" class="btn btn-default bg-red btn-xs"><i class="fa  fa-close "></i>逾期</button>
                 </span></a></li>
-                <li><a href="#">备注 <span class="pull-right"></span></a></li>
+                <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
               </ul>
             </div>
 

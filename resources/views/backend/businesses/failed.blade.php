@@ -23,18 +23,19 @@
 
       <div class="box-footer no-padding">
         <ul class="nav nav-stacked">
-          <li><a href="#">手机 <span class="pull-right">{{ $model->phone }}</span></a></li>
-          <li><a href="#">贷款额度 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ $model->loan }}</span></a></li>
-          <li><a href="#">车牌号 <span class="pull-right">{{ $model->plate_number }}</span></a></li>
-          <li><a href="#">期限<span class="pull-right">{{ $model->duration }}(月) </span></a></li>
-          <li><a href="#">汽车品牌 <span class="pull-right">{{ $model->brand }}</span></a></li>
-          <li><a href="#">购买日期 <span class="pull-right">{{ $model->bought_at }}</span></a></li>
-          <li><a href="#">付款方式 <span class="pull-right">{{ $model->paid_by }}</span></a></li>
+          <li><a href="#">手机 <span class="pull-right">{{ $model->loan->phone }}</span></a></li>
+          <li><a href="#">贷款额度 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ $model->loan->amount }}</span></a></li>
+          <li><a href="#">期限<span class="pull-right">{{ $model->loan->duration }}(月) </span></a></li>
+          <li><a href="#">公司 <span class="pull-right">{{ $model->company }}</span></a></li>
+          <li><a href="#">注册日期 <span class="pull-right">{{ $model->registered_at }}</span></a></li>
+          <li><a href="#">房产 <span class="pull-right">{{ $model->house }}</span></a></li>
+          <li><a href="#">占股 <span class="pull-right">{{ $model->share }}</span></a></li>
+          <li><a href="#">年营业额 <span class="pull-right">{{ $model->annual_turnover }}</span></a></li>
           <li><a href="###">审批操作 <span class="pull-right">
             <button class='btn btn-default bg-green btn-xs' onclick='pass({{ $model->id }}, this)'><span class="fa fa-check" aria-hidden="true"></span> 通过</button>
             <button class='btn btn-default bg-blue btn-xs' onclick='unpass({{ $model->id }}, this)'><span class="fa fa-reply" aria-hidden="true"></span> 待审</button>
           </span></a></li>
-          <li><a href="#">备注 <span class="pull-right"></span></a></li>
+          <li><a href="#">备注 <span class="pull-right" id='mark'>{{ $model->loan->mark }}</span></a></li>
         </ul>
       </div>
 
@@ -69,7 +70,7 @@
 <script>
 function pass(id, btn)
 {
-    $.post('/businesses/'+id+'/pass' ,{}, function(result){
+    $.post('/businesses/'+id+'/pass' ,{mark: $('#mark').html()}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show(); 
 

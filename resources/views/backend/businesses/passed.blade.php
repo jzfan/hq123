@@ -9,7 +9,7 @@
     <!-- Widget: user widget style 1 -->
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h5>姓名：&nbsp;<span class="">{{ $model->real_name or ''}}</span>&nbsp;<small class="label bg-green">{{ $model->status }}</small> </h5>
+        <h5>姓名：&nbsp;<span class="">{{ $model->loan->name }}</span>&nbsp;<small class="label bg-green">{{ $model->status }}</small> </h5>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
           </button>
@@ -23,17 +23,19 @@
 
       <div class="box-footer no-padding">
         <ul class="nav nav-stacked">
-          <li><a href="#">手机 <span class="pull-right">{{ $model->phone }}</span></a></li>
-          <li><a href="#">贷款额度 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ $model->loan }}</span></a></li>
-          <li><a href="#">期限<span class="pull-right">{{ $model->duration }}(月) </span></a></li>
-          <li><a href="#">估价 <span class="pull-right">{{ $model->assess }}</span></a></li>
-          <li><a href="#">购买日期 <span class="pull-right">{{ $model->bought_at }}</span></a></li>
-          <li><a href="#">付款方式 <span class="pull-right">{{ $model->paid_by }}</span></a></li>
+          <li><a href="#">手机 <span class="pull-right">{{ $model->loan->phone }}</span></a></li>
+          <li><a href="#">贷款额度 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ $model->loan->amount }}</span></a></li>
+          <li><a href="#">期限<span class="pull-right">{{ $model->loan->duration }}(月) </span></a></li>
+          <li><a href="#">公司 <span class="pull-right">{{ $model->company }}</span></a></li>
+          <li><a href="#">注册日期 <span class="pull-right">{{ $model->registered_at }}</span></a></li>
+          <li><a href="#">房产 <span class="pull-right">{{ $model->house }}</span></a></li>
+          <li><a href="#">占股 <span class="pull-right">{{ $model->share }}</span></a></li>
+          <li><a href="#">年营业额 <span class="pull-right">{{ $model->annual_turnover }}</span></a></li>
           <li><a href="###">审批操作 <span class="pull-right">
             <button class='btn btn-default bg-blue btn-xs' onclick='unpass({{ $model->id }}, this)'><span class="fa fa-reply" aria-hidden="true"></span> 待审</button>
             <button class='btn btn-default bg-red btn-xs' onclick='reject({{ $model->id }}, this)'><span class="fa fa-close" aria-hidden="true"></span> 拒绝</button>
           </span></a></li>
-          <li><a href="#">备注 <span class="pull-right"></span></a></li>
+          <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
         </ul>
       </div>
 
