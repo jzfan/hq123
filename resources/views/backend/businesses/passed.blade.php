@@ -35,7 +35,7 @@
             <button class='btn btn-default bg-blue btn-xs' onclick='unpass({{ $model->id }}, this)'><span class="fa fa-reply" aria-hidden="true"></span> 待审</button>
             <button class='btn btn-default bg-red btn-xs' onclick='reject({{ $model->id }}, this)'><span class="fa fa-close" aria-hidden="true"></span> 拒绝</button>
           </span></a></li>
-          <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
+          <li><a href="#">备注 <span class="pull-right" name='mark' id='mark'>{{ $model->loan->mark }}</span></a></li>
         </ul>
       </div>
 
@@ -70,7 +70,7 @@
 <script>
 function unpass(id, btn)
 {
-    $.post('/businesses/'+id+'/unpass' ,{}, function(result){
+    $.post('/businesses/'+id+'/unpass' ,{mark: $('#mark').html()}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show(); 
     });
@@ -78,7 +78,7 @@ function unpass(id, btn)
 
 function reject(id, btn)
 {
-    $.post('/businesses/'+id+'/reject', {}, function(result){
+    $.post('/businesses/'+id+'/reject' ,{mark: $('#mark').html()}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show();
     });

@@ -2,8 +2,6 @@
 
 namespace Wx\Loan\Repo;
 
-use Wx\File\File;
-
 abstract class BaseRepo
 {
 	protected $rule;

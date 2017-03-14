@@ -22,7 +22,7 @@ class CreateLoansTable extends Migration
             $table->string('phone');
             $table->integer('loanable_id')->unsigned();
             $table->string('loanable_type');
-            $table->string('mark')->default('');
+            $table->string('mark')->default('')->nullable();
             $table->timestamps();
         });
     }

@@ -34,7 +34,7 @@
             <button class='btn btn-default bg-green btn-xs' onclick='pass({{ $model->id }}, this)'><span class="fa fa-check" aria-hidden="true"></span> 通过</button>
             <button class='btn btn-default bg-red btn-xs' onclick='reject({{ $model->id }}, this)'><span class="fa fa-close" aria-hidden="true"></span> 拒绝</button>
           </span></a></li>
-          <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
+          <li><a href="#">备注 <span class="pull-right" name='mark' id='mark'>{{ $model->loan->mark }}</span></a></li>
         </ul>
       </div>
 
@@ -69,7 +69,7 @@
 <script>
 function pass(id, btn)
 {
-    $.post('/funds/'+id+'/pass' ,{}, function(result){
+    $.post('/funds/'+id+'/pass' ,{mark: $('#mark').html()}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show(); 
 
@@ -78,7 +78,7 @@ function pass(id, btn)
 
 function reject(id, btn)
 {
-    $.post('/funds/'+id+'/reject', {}, function(result){
+    $.post('/funds/'+id+'/reject' ,{mark: $('#mark').html()}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show();
     });

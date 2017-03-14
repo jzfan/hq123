@@ -79,7 +79,7 @@ function pass(id, btn)
 
 function unpass(id, btn)
 {
-    $.post('/businesses/'+id+'/unpass', {}, function(result){
+    $.post('/businesses/'+id+'/unpass' ,{mark: $('#mark').html()}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show();
     });

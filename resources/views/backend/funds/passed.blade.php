@@ -9,7 +9,7 @@
     <!-- Widget: user widget style 1 -->
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h5>姓名：&nbsp;<span class="">{{ $model->loan->name }}</span>&nbsp;<small class="label bg-green">{{ $model->status }}</small> </h5>
+        <h5>姓名：&nbsp;<span class="">{{ $model->real_name or ''}}</span>&nbsp;<small class="label bg-green">{{ $model->status }}</small> </h5>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
           </button>
@@ -23,18 +23,18 @@
 
       <div class="box-footer no-padding">
         <ul class="nav nav-stacked">
-          <li><a href="#">手机 <span class="pull-right">{{ $model->loan->phone }}</span></a></li>
-          <li><a href="#">贷款额度 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ number_format($model->loan->amount) }}元</span></a></li>
+          <li><a href="#">手机 <span class="pull-right">{{ $model->phone }}</span></a></li>
+          <li><a href="#">贷款额度 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ number_format($model->loan) }}元</span></a></li>
           <li><a href="#">单位 <span class="pull-right">{{ $model->company }}</span></a></li>
           <li><a href="#">入职时间 <span class="pull-right">{{ $model->worked_at }}</span></a></li>
-          <li><a href="#">期限<span class="pull-right">{{ $model->loan->duration }}(月) </span></a></li>
+          <li><a href="#">期限<span class="pull-right">{{ $model->duration }}(月) </span></a></li>
           <li><a href="#">社保 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ $model->insurance }}元</span></a></li>
           <li><a href="#">公积金 <span class="pull-right"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span> {{ $model->fund }}元</span></a></li>
           <li><a href="###">审批操作 <span class="pull-right">
             <button class='btn btn-default bg-blue btn-xs' onclick='unpass({{ $model->id }}, this)'><span class="fa fa-reply" aria-hidden="true"></span> 待审</button>
             <button class='btn btn-default bg-red btn-xs' onclick='reject({{ $model->id }}, this)'><span class="fa fa-close" aria-hidden="true"></span> 拒绝</button>
           </span></a></li>
-          <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
+          <li><a href="#">备注 <span class="pull-right" name='mark' id='mark'></span></a></li>
         </ul>
       </div>
 
@@ -69,7 +69,7 @@
 <script>
 function unpass(id, btn)
 {
-    $.post('/funds/'+id+'/unpass' ,{}, function(result){
+    $.post('/funds/'+id+'/unpass' ,{mark: $('#mark').html()}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show(); 
     });
@@ -77,7 +77,7 @@ function unpass(id, btn)
 
 function reject(id, btn)
 {
-    $.post('/funds/'+id+'/reject', {}, function(result){
+    $.post('/funds/'+id+'/reject' ,{mark: $('#mark').html()}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show();
     });

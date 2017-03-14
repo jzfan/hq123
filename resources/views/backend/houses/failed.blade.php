@@ -32,7 +32,7 @@
             <button class='btn btn-default bg-green btn-xs' onclick='pass({{ $model->id }}, this)'><span class="fa fa-check" aria-hidden="true"></span> 通过</button>
             <button class='btn btn-default bg-blue btn-xs' onclick='unpass({{ $model->id }}, this)'><span class="fa fa-reply" aria-hidden="true"></span> 待审</button>
           </span></a></li>
-          <li><a href="#">备注 <span class="pull-right">{{ $model->loan->mark }}</span></a></li>
+          <li><a href="#">备注 <span class="pull-right" name='mark' id='mark'>{{ $model->loan->mark }}</span></a></li>
         </ul>
       </div>
 
@@ -67,7 +67,7 @@
 <script>
 function pass(id, btn)
 {
-    $.post('/houses/'+id+'/pass' ,{}, function(result){
+    $.post('/houses/'+id+'/pass' ,{mark: $('#mark').html()}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show(); 
 
@@ -76,7 +76,7 @@ function pass(id, btn)
 
 function unpass(id, btn)
 {
-    $.post('/houses/'+id+'/unpass', {}, function(result){
+    $.post('/houses/'+id+'/unpass', {mark: $('#mark').html()}, function(result){
         $(btn).closest('.col-md-4').css('display', 'none');
         $('#success-div').show();
     });
